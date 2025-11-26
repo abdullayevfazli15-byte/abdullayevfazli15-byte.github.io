@@ -3,88 +3,116 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trikotaj mahsulotlari — Khiva Textile</title>
+  <title>Trikotaj — Khiva Textile</title>
 
   <style>
     body {
       margin: 0;
-      padding: 0;
       font-family: Arial, sans-serif;
-      background: #f2f4f8;
+      background: #f4f6fa;
     }
 
-    .container {
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background: #ffffffcc;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 35px;
+      z-index: 1000;
+    }
+    nav a {
+      text-decoration: none;
+      color: #0b63b8;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    /* Title */
+    .title {
+      margin-top: 100px;
+      text-align: center;
+      font-size: 32px;
+      color: #003366;
+      font-weight: bold;
+    }
+
+    /* Gallery grid */
+    .gallery {
       max-width: 1100px;
       margin: 40px auto;
-      background: #fff;
-      padding: 25px;
-      border-radius: 18px;
-      box-shadow: 0 10px 28px rgba(0,0,0,0.1);
-    }
-
-    h1 {
-      text-align: center;
-      color: #003366;
-      font-size: 32px;
-      margin-bottom: 25px;
-    }
-
-    .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      padding: 20px;
     }
 
     .gallery img {
       width: 100%;
-      height: 260px;
+      height: 250px;
       object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+      border-radius: 14px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
       transition: 0.3s;
-      cursor: pointer;
     }
 
     .gallery img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      transform: scale(1.04);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.18);
     }
 
-    .back {
+    /* Back button */
+    .back-btn {
       display: block;
-      width: 180px;
-      margin: 25px auto 0;
+      width: 200px;
       text-align: center;
-      padding: 12px 18px;
+      margin: 20px auto;
+      padding: 12px 0;
       background: #0b63b8;
       color: white;
       border-radius: 10px;
       text-decoration: none;
       font-size: 18px;
+      font-weight: bold;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+      transition: 0.3s;
     }
 
-    .back:hover {
-      background: #084c8c;
+    .back-btn:hover {
+      background: #084f92;
     }
+
   </style>
-
 </head>
 <body>
 
-  <div class="container">
-    <h1>Trikotaj mahsulotlari</h1>
+  <!-- NAVBAR -->
+  <nav>
+    <a href="index.html">Bosh sahifa</a>
+    <a href="index.html#mahsulot">Mahsulotlar</a>
+    <a href="index.html#aloqa">Aloqa</a>
+  </nav>
 
-    <div class="gallery">
-      <img src="triko1.jfif" alt="Trikotaj 1">
-      <img src="triko2.jpg" alt="Trikotaj 2">
-      <img src="triko3.jpg" alt="Trikotaj 3">
-      <img src="triko4.jpg" alt="Trikotaj 4">
-      <img src="triko5.jpg" alt="Trikotaj 5">
-      <img src="triko6.jpg" alt="Trikotaj 6">
-    </div>
+  <div class="title">Trikotaj bo‘limi</div>
 
-    <a class="back" href="index.html#mahsulot">⬅ Ortga qaytish</a>
+  <!-- GALLERY -->
+  <div class="gallery">
+    <img src="triko1.jfif" alt="Trikotaj 1">
+    <img src="triko2.jpg" alt="Trikotaj 2">
+    <img src="triko3.jpg" alt="Trikotaj 3">
+    <img src="triko4.jpg" alt="Trikotaj 4">
+    <img src="triko5.jpg" alt="Trikotaj 5">
+    <img src="triko6.jpg" alt="Trikotaj 6">
   </div>
+
+  <a href="index.html" class="back-btn">← Ortga qaytish</a>
 
 </body>
 </html>
