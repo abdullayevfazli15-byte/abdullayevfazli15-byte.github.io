@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trikotaj mahsulotlari — Khiva Textile</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #f2f4f8;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 18px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #003366;
+      font-size: 32px;
+      margin-bottom: 25px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    }
+
+    .back {
+      display: block;
+      width: 180px;
+      margin: 25px auto 0;
+      text-align: center;
+      padding: 12px 18px;
+      background: #0b63b8;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .back:hover {
+      background: #084c8c;
+    }
+  </style>
+
+</head>
+<body>
+
+  <div class="container">
+    <h1>Trikotaj mahsulotlari</h1>
+
+    <div class="gallery">
+      <img src="triko1.jfif" alt="Trikotaj 1">
+      <img src="triko2.jpg" alt="Trikotaj 2">
+      <img src="triko3.jpg" alt="Trikotaj 3">
+      <img src="triko4.jpg" alt="Trikotaj 4">
+      <img src="triko5.jpg" alt="Trikotaj 5">
+      <img src="triko6.jpg" alt="Trikotaj 6">
+    </div>
+
+    <a class="back" href="index.html#mahsulot">⬅ Ortga qaytish</a>
+  </div>
+
+</body>
+</html>
