@@ -2,12 +2,12 @@
 <html lang="uz">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Khiva Textile</title>
 
   <style>
-    /* ——— Umumiy ——— */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
       font-family: Arial, sans-serif;
       background: #f2f4f8;
@@ -15,7 +15,7 @@
       scroll-behavior: smooth;
     }
 
-    /* ——— NAV ——— */
+    /* ——— NAVBAR ——— */
     nav {
       position: fixed;
       top: 0;
@@ -26,11 +26,12 @@
       align-items: center;
       justify-content: center;
       gap: 35px;
-      background: rgba(255,255,255,0.9);
-      backdrop-filter: blur(8px);
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(10px);
       box-shadow: 0 4px 14px rgba(0,0,0,0.12);
       z-index: 10000;
     }
+
     nav a {
       text-decoration: none;
       color: #0b63b8;
@@ -40,41 +41,54 @@
       border-radius: 10px;
       transition: 0.2s;
     }
+
     nav a:hover {
-      background: rgba(11,99,184,0.10);
+      background: rgba(11,99,184,0.12);
     }
 
-    /* ——— HERO ——— */
+    /* ——— HERO (rasm to‘liq ko‘rinadi) ——— */
     .hero {
-      background-image: linear-gradient(
-        rgba(0,0,0,0.25),
-        rgba(0,0,0,0.25)
-      ), url("newfon.png");
-      background-size: cover;
-      background-position: center;
-      height: 88vh;
+      position: relative;
+      width: 100%;
+      height: 100vh; /* Rasm to‘liq ko‘rinadi */
+      background: url("newfon.png") center center / cover no-repeat;
       display: flex;
       justify-content: center;
-      align-items: flex-end;
-      padding-bottom: 80px;
-      color: white;
-      text-align: center;
+      align-items: flex-end; /* pastroqqa tushiradi */
+      padding-bottom: 120px; /* pastga surish */
     }
+
+    /* Qora gradient – rasm chiroyli ko‘rinsin */
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(
+        rgba(0,0,0,0.20),
+        rgba(0,0,0,0.50)
+      );
+      z-index: 1;
+    }
+
     .hero-title {
-      font-size: 52px;
+      position: relative;
+      z-index: 5;
+      color: white;
+      font-size: 54px;
       font-weight: 800;
-      text-shadow: 0 6px 18px rgba(0,0,0,0.55);
+      text-shadow: 0 6px 18px rgba(0,0,0,0.8);
       background: rgba(0,0,0,0.35);
-      padding: 16px 30px;
-      border-radius: 14px;
+      padding: 16px 32px;
+      border-radius: 16px;
     }
 
     /* ——— BO‘LIMLAR ——— */
     section {
       max-width: 1000px;
-      margin: 45px auto;
+      margin: 40px auto;
       padding: 35px 28px;
-      background: #fff;
+      background: white;
       border-radius: 22px;
       box-shadow: 0 10px 28px rgba(0,0,0,0.10);
     }
@@ -89,34 +103,34 @@
       line-height: 1.7;
       color: #444;
       text-align: center;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
-    /* ——— Mobil optimizatsiya ——— */
+    /* ——— MOBIL ——— */
     @media (max-width: 700px) {
 
       nav {
-        height: 56px;
-        gap: 15px;
+        height: 54px;
+        gap: 20px;
       }
       nav a {
-        padding: 8px 10px;
         font-size: 14px;
+        padding: 6px 10px;
       }
 
       .hero {
-        height: 60vh;
-        padding-bottom: 60px;
+        height: 85vh; /* mobilda ham chiroyli */
+        padding-bottom: 90px;
       }
+
       .hero-title {
-        font-size: 32px;
-        padding: 12px 20px;
+        font-size: 34px;
+        padding: 10px 20px;
       }
 
       section {
         margin: 25px 12px;
-        padding: 25px 18px;
-        border-radius: 16px;
+        padding: 22px 18px;
       }
       h2 {
         font-size: 26px;
@@ -126,14 +140,11 @@
       }
     }
 
-    /* Eski menyularni yopish */
-    .menu, .buttons, .hero-buttons, .old-menu { display: none !important; }
   </style>
 </head>
-
 <body>
 
-  <!-- NAV -->
+  <!-- NAVBAR -->
   <nav>
     <a href="#biz">Biz haqimizda</a>
     <a href="#mahsulot">Mahsulotlar</a>
@@ -149,17 +160,17 @@
   <section id="biz">
     <h2>Biz haqimizda</h2>
     <p>
-      Khiva Textile — zamonaviy texnologiyalardan foydalangan holda yuqori sifatli to‘qimachilik mahsulotlari ishlab chiqaruvchi korxona.
+      Khiva Textile — zamonaviy texnologiyalar yordamida yuqori sifatli to‘qimachilik mahsulotlari ishlab chiqaruvchi korxona.
     </p>
     <p>
-      Mahsulotlarimiz ichki hamda tashqi bozorlarda talabgir bo‘lib, sifat va ishonchlilik bizning ustuvor yo‘nalishimizdir.
+      Mahsulotlarimiz ichki va tashqi bozorlarda talabgir bo‘lib, sifat va ishonchlilik bizning ustuvor yo‘nalishimizdir.
     </p>
   </section>
 
   <!-- Mahsulotlar -->
   <section id="mahsulot">
     <h2>Mahsulotlar</h2>
-    <p>Bu bo‘limga trikotaj mahsulotlar, bolalar kiyimlari va boshqa assortimentlar joylashtiriladi.</p>
+    <p>Bu bo‘limga trikotaj, bolalar kiyimi va boshqa assortimentlar joylashtiriladi.</p>
   </section>
 
   <!-- Aloqa -->
