@@ -1,150 +1,289 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uz">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Ip mahsulotlari — Khiva Textile</title>
+  <meta name="description" content="Khiva Textile — Ip mahsulotlari. IP turlari va texnik shartnomalar (PDF)." />
 
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #eef2f7;
+    :root{
+      --blue:#0b63b8;
+      --dark:#0b3456;
+      --bg:#f3f6f9;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --radius:14px;
+      --glass: rgba(255,255,255,0.7);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(180deg,#f5f8fb 0%, #eef3f7 100%);
+      color:#1f2937;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
     }
 
-    /* NAVBAR */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      height: 70px;
-      background: #ffffffcc;
-      backdrop-filter: blur(12px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 40px;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.12);
-      z-index: 1000;
+    /* header / nav */
+    header.site-header{
+      position:fixed;
+      top:0;left:0;right:0;
+      height:72px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:36px;
+      background:var(--glass);
+      backdrop-filter: blur(8px) saturate(1.05);
+      box-shadow:0 6px 18px rgba(16,24,40,0.06);
+      z-index:2000;
+    }
+    header.site-header a{
+      color:var(--blue);
+      text-decoration:none;
+      font-weight:700;
+      font-size:16px;
+      padding:10px 12px;
+      border-radius:10px;
+    }
+    header.site-header a:hover{ background: rgba(11,99,184,0.08) }
+
+    main{
+      padding: 110px 20px 60px;
+      max-width:1100px;
+      margin:0 auto;
     }
 
-    nav a {
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: 600;
-      color: #0b63b8;
-      padding: 8px 14px;
-      border-radius: 10px;
-      transition: 0.3s;
+    h1{
+      text-align:center;
+      font-size:36px;
+      color:var(--dark);
+      margin:6px 0 24px;
+      letter-spacing:0.2px;
     }
 
-    nav a:hover {
-      background: rgba(11, 99, 184, 0.12);
+    /* card with main ip image */
+    .hero-card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow: 0 12px 36px rgba(15,23,42,0.06);
+      display:flex;
+      gap:18px;
+      align-items:center;
+      flex-wrap:wrap;
+      margin-bottom:26px;
     }
 
-    /* PAGE TITLE */
-    .title {
-      margin-top: 120px;
-      text-align: center;
-      font-size: 34px;
-      font-weight: 900;
-      background: linear-gradient(45deg, #003366, #0b63b8);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .hero-card .img-wrap{
+      flex: 1 1 360px;
+      min-height:220px;
+      border-radius:12px;
+      overflow:hidden;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: linear-gradient(180deg,#fafbfd,#f3f7fb);
+      padding:18px;
+    }
+    .hero-card img{
+      max-width:100%;
+      height:auto;
+      display:block;
+      border-radius:10px;
+      box-shadow: 0 8px 24px rgba(11,99,184,0.06);
     }
 
-    /* IMAGE */
-    .main-img-box {
-      max-width: 600px;
-      margin: 30px auto;
-      text-align: center;
+    .hero-card .info{
+      flex: 1 1 320px;
+      min-width:260px;
+    }
+    .hero-card .info p{
+      color:var(--muted);
+      line-height:1.6;
+      margin-bottom:14px;
     }
 
-    .main-img-box img {
-      width: 100%;
-      border-radius: 18px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.18);
+    /* numbers list */
+    .numbers{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:8px;
     }
 
-    /* IP NUMBER LIST */
-    .ip-list {
-      max-width: 700px;
-      margin: 40px auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 18px;
-      padding: 20px;
+    .num-btn{
+      background: linear-gradient(180deg,#fff,#f6fbff);
+      border: 1px solid rgba(11,99,184,0.06);
+      color:var(--blue);
+      padding:10px 14px;
+      border-radius:12px;
+      font-weight:700;
+      box-shadow: 0 10px 20px rgba(11,99,184,0.04);
+      text-decoration:none;
+      transition: transform .14s ease, box-shadow .14s ease;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
     }
-
-    .ip-item {
-      padding: 15px;
-      background: white;
-      text-align: center;
-      border-radius: 14px;
-      font-size: 20px;
-      font-weight: bold;
-      color: #0b63b8;
-      cursor: pointer;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.12);
-      transition: 0.3s;
-      text-decoration: none;
-    }
-
-    .ip-item:hover {
+    .num-btn:hover{
       transform: translateY(-6px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      box-shadow: 0 18px 34px rgba(11,99,184,0.10);
+    }
+    .num-btn .tag{
+      background: rgba(11,99,184,0.08);
+      padding:6px 9px;
+      border-radius:8px;
+      color:var(--blue);
+      font-weight:800;
+      font-size:13px;
     }
 
-    /* MOBILE */
-    @media (max-width: 600px) {
-      .title {
-        font-size: 26px;
-      }
-      .ip-item {
-        font-size: 18px;
-      }
+    /* grid (fallback) for small screens */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap:18px;
+      margin-top:28px;
+    }
+
+    .card{
+      background:var(--card);
+      border-radius:12px;
+      padding:12px;
+      box-shadow: 0 10px 26px rgba(16,24,40,0.04);
+      text-align:center;
+    }
+    .card h4{ margin:10px 0 6px; color:var(--dark) }
+    .card p{ color:var(--muted); font-size:14px }
+
+    /* footer note */
+    .note{
+      margin-top:26px;
+      color:var(--muted);
+      font-size:14px;
+      text-align:center;
+    }
+
+    /* responsive */
+    @media (max-width:880px){
+      h1{ font-size:28px }
+      header.site-header{ height:64px }
+      main{ padding-top:92px }
+    }
+    @media (max-width:560px){
+      .hero-card{ flex-direction:column; align-items:stretch }
+      .hero-card .img-wrap{ min-height:200px }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav>
+  <header class="site-header" role="banner">
     <a href="index.html">Bosh sahifa</a>
     <a href="index.html#mahsulot">Mahsulotlar</a>
     <a href="index.html#aloqa">Aloqa</a>
-  </nav>
+  </header>
 
-  <div class="title">Ip mahsulotlari</div>
+  <main>
+    <h1>Ip mahsulotlari</h1>
 
-  <!-- IMAGE -->
-  <div class="main-img-box">
-    <img src="https://dl.dropboxusercontent.com/scl/fi/evir4grzdenslrp4s755w/ip.jpg?rlkey=uvoydy69gv3lqfvaecivs6812" alt="Ip rasmi">
+    <!-- MAIN HERO -->
+    <section class="hero-card" aria-labelledby="ip-title">
+      <div class="img-wrap" aria-hidden="false">
+        <!-- IP IMAGE: raw Dropbox link (reklamasiz) -->
+        <img src="https://dl.dropboxusercontent.com/scl/fi/evir4grzdenslrp4s755w/ip.jpg?rlkey=uvoydy69gv3lqfvaecivs6812"
+             alt="Ip rasm (Khiva Textile)" id="ip-image" onerror="this.style.opacity=.18; this.previousElementSibling && (this.previousElementSibling.style.display='none')">
+      </div>
 
-  </div>
+      <div class="info">
+        <h2 id="ip-title" style="margin:0 0 6px; font-size:20px; color:var(--dark)"><strong>Ip turlari</strong></h2>
+        <p>
+          Quyida korxonamizda mavjud ip nomerlari ko‘rsatilgan. Har bir nomer ustiga bosilganda tegishli texnik shartnoma (PDF) yangi oynada ochiladi.
+          Agar brauzeringizda PDF avtomatik yuklab qolsa — brauzer sozlamalari yoki qurilma bilan bog‘liq bo‘lishi mumkin.
+        </p>
 
-  <!-- IP LIST -->
-  <div class="ip-list">
+        <div class="numbers" id="numbers-list">
+          <!-- Tugmalar: har biriga target blank bilan raw Dropbox PDF qo'yilgan -->
+          <a class="num-btn" href="https://dl.dropboxusercontent.com/scl/fi/q6ay20u7l58bt3pmwdrsv/12-1oe.pdf?rlkey=f6u5rea4rx5iqtwfxzxeh6chm" target="_blank" rel="noopener noreferrer">
+            <span class="tag">12/1</span>
+            <span>12/1</span>
+          </a>
 
-    <a class="ip-item" href="https://www.dropbox.com/scl/fi/q6ay20u7l58bt3pmwdrsv/12-1oe.pdf?rlkey=f6u5rea4rx5iqtwfxzxeh6chm&dl=0" target="_blank">12/1</a>
+          <a class="num-btn" href="https://dl.dropboxusercontent.com/scl/fi/xhx2gliw194rjct6t3xcl/16-1oe.pdf?rlkey=5er0u6h50kmvh24ot7wc9dlkz" target="_blank" rel="noopener noreferrer">
+            <span class="tag">16/1</span>
+            <span>16/1</span>
+          </a>
 
-    <a class="ip-item" href="https://www.dropbox.com/scl/fi/xhx2gliw194rjct6t3xcl/16-1oe.pdf?rlkey=5er0u6h50kmvh24ot7wc9dlkz&dl=0" target="_blank">16/1</a>
+          <a class="num-btn" href="https://dl.dropboxusercontent.com/scl/fi/lcowyprehpu2glw8x47dv/20-1oe.pdf?rlkey=k14170mxv324wwgzs5rg1esj1" target="_blank" rel="noopener noreferrer">
+            <span class="tag">20/1</span>
+            <span>20/1</span>
+          </a>
 
-    <a class="ip-item" href="https://www.dropbox.com/scl/fi/lcowyprehpu2glw8x47dv/20-1oe.pdf?rlkey=k14170mxv324wwgzs5rg1esj1&dl=0" target="_blank">20/1</a>
+          <a class="num-btn" href="https://dl.dropboxusercontent.com/scl/fi/l2d5leokei9ilsxfi3bjx/24-1oe.pdf?rlkey=ir4chwfcqc6e3984dwdgrytsb" target="_blank" rel="noopener noreferrer">
+            <span class="tag">24/1</span>
+            <span>24/1</span>
+          </a>
 
-    <a class="ip-item" href="https://www.dropbox.com/scl/fi/l2d5leokei9ilsxfi3bjx/24-1oe.pdf?rlkey=ir4chwfcqc6e3984dwdgrytsb&dl=0" target="_blank">24/1</a>
+          <a class="num-btn" href="https://dl.dropboxusercontent.com/scl/fi/j7u7iyum729mvl2y9albk/26-1oe.pdf?rlkey=gomvxpwwsyju5u59kfdkcm0jt" target="_blank" rel="noopener noreferrer">
+            <span class="tag">26/1</span>
+            <span>26/1</span>
+          </a>
 
-    <a class="ip-item" href="https://www.dropbox.com/scl/fi/j7u7iyum729mvl2y9albk/26-1oe.pdf?rlkey=gomvxpwwsyju5u59kfdkcm0jt&dl=0" target="_blank">26/1</a>
+          <a class="num-btn" href="https://dl.dropboxusercontent.com/scl/fi/0c768f9nwq39c9hfbom4r/29-1oe.pdf?rlkey=isuoif80flzrbfsx9fqn2mlky" target="_blank" rel="noopener noreferrer">
+            <span class="tag">29/1</span>
+            <span>29/1</span>
+          </a>
 
-    <a class="ip-item" href="https://www.dropbox.com/scl/fi/0c768f9nwq39c9hfbom4r/29-1oe.pdf?rlkey=isuoif80flzrbfsx9fqn2mlky&dl=0" target="_blank">29/1</a>
+          <a class="num-btn" href="https://dl.dropboxusercontent.com/scl/fi/30ae539edis43wv64y4to/30-1oe.pdf?rlkey=uhuyks7avi49njzembfuk5iqv" target="_blank" rel="noopener noreferrer">
+            <span class="tag">30/1</span>
+            <span>30/1</span>
+          </a>
 
-    <a class="ip-item" href="https://www.dropbox.com/scl/fi/30ae539edis43wv64y4to/30-1oe.pdf?rlkey=uhuyks7avi49njzembfuk5iqv&dl=0" target="_blank">30/1</a>
+          <a class="num-btn" href="https://dl.dropboxusercontent.com/scl/fi/4rsvd61kmxaj0j1diwt6k/32-1oe.pdf?rlkey=ufxn4v23q1jxhsn4ah3ki74t0" target="_blank" rel="noopener noreferrer">
+            <span class="tag">32/1</span>
+            <span>32/1</span>
+          </a>
 
-    <a class="ip-item" href="https://www.dropbox.com/scl/fi/4rsvd61kmxaj0j1diwt6k/32-1oe.pdf?rlkey=ufxn4v23q1jxhsn4ah3ki74t0&dl=0" target="_blank">32/1</a>
+          <a class="num-btn" href="https://dl.dropboxusercontent.com/scl/fi/8wq2cetb8zmdvhek7mvbk/40-1oe.pdf?rlkey=1ab9aydoemf2quqvdv9lc5hpf" target="_blank" rel="noopener noreferrer">
+            <span class="tag">40/1</span>
+            <span>40/1</span>
+          </a>
+        </div>
+      </div>
+    </section>
 
-    <a class="ip-item" href="https://www.dropbox.com/scl/fi/8wq2cetb8zmdvhek7mvbk/40-1oe.pdf?rlkey=1ab9aydoemf2quqvdv9lc5hpf&dl=0" target="_blank">40/1</a>
+    <!-- optional: add more content or gallery -->
+    <div class="grid" aria-hidden="true">
+      <div class="card">
+        <h4>Paxta qayta ishlash</h4>
+        <p>Ishlab chiqarish quvvati: 1200 tonna / oy</p>
+      </div>
+      <div class="card">
+        <h4>Ip ishlab chiqarish</h4>
+        <p>Ishlab chiqarish quvvati: 550 tonna / oy</p>
+      </div>
+      <div class="card">
+        <h4>Trikotaj mato</h4>
+        <p>Ishlab chiqarish quvvati: 250 tonna / oy</p>
+      </div>
+    </div>
 
-  </div>
+    <p class="note">Agar PDF yangi oynada ochilmasa — brauzer “download” sozlamalari sababli bo‘lishi mumkin. Bu holatda men bilan xabar qoldiring, men katologlash/host qilishning boshqa usulini (GitHub releases yoki Google Drive raw) taklif qilaman.</p>
+  </main>
 
+  <script>
+    // Agar xohlasangiz, keyinchalik tugmalarni JS orqali yaratish uchun objekt qo'shishingiz mumkin.
+    // Hozir hamma linklar HTMLda statik joylangan (to'liq ishlaydi).
+    // Mana tekshirish uchun kichik qo'shimcha: agar image 404 bo'lsa, foydalanuvchiga tushunarli yozuv ko'rsatiladi.
+    (function(){
+      var img = document.getElementById('ip-image');
+      img.addEventListener('error', function(){
+        img.alt = "Rasm topilmadi — server yoki Dropbox link bilan muammo bo'lishi mumkin.";
+      });
+    })();
+  </script>
 </body>
 </html>
