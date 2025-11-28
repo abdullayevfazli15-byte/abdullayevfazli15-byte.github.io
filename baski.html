@@ -6,70 +6,91 @@
 <title>Baski bo‘limi — Khiva Textile</title>
 
 <style>
+    :root {
+        --bg: #f0f4f9;
+        --card: #ffffffcc;
+        --accent1: #0b63b8;
+        --accent2: #7b4bff;
+        --accent3: #ff8c42;
+    }
+
     body {
-        margin:0;
+        margin: 0;
         font-family: Arial, sans-serif;
-        background:#f2f4f8;
-        color:#1f2937;
+        background: var(--bg);
+        color: #1f2937;
     }
 
     /* HERO */
     .hero {
-        height: 45vh;
-        background: #003366;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        text-align:center;
-        color:white;
-        padding:20px;
-    }
-    .hero h1 {
-        font-size:38px;
-        font-weight:900;
+        height: 42vh;
+        background: linear-gradient(135deg, #0b63b8, #4aa3ff);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-align: center;
+        font-size: 36px;
+        font-weight: 900;
+        letter-spacing: 1px;
+        box-shadow: 0 8px 20px #0002;
     }
 
-    /* SECTION */
+    /* SECTION CARD */
     section {
         max-width: 1100px;
-        margin: 40px auto;
-        background:white;
-        padding:35px 40px;
-        border-radius:22px;
-        box-shadow:0 8px 25px rgba(0,0,0,0.08);
+        margin: 45px auto;
+        background: var(--card);
+        padding: 40px;
+        border-radius: 28px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.10);
+        backdrop-filter: blur(10px);
+        animation: fadeUp 0.6s ease;
     }
+
+    @keyframes fadeUp {
+        from {opacity: 0; transform: translateY(20px);}
+        to   {opacity: 1; transform: translateY(0);}
+    }
+
     h2 {
-        font-size:28px;
-        color:#003366;
-        margin-bottom:15px;
-        font-weight:900;
+        font-size: 28px;
+        font-weight: 900;
+        margin-bottom: 12px;
     }
+
     p {
-        font-size:17px;
-        line-height:1.7;
-        margin-bottom:12px;
+        font-size: 17px;
+        line-height: 1.7;
+        margin-bottom: 12px;
     }
 
-    /* GALLERY */
+    /* SECTION BORDER COLOR ACCENT */
+    .border-10 { border-left: 8px solid var(--accent1); }
+    .border-7  { border-left: 8px solid var(--accent2); }
+    .border-4  { border-left: 8px solid var(--accent3); }
+
+    /* GALLERY GRID */
     .gallery {
-        display:grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-        gap:18px;
-        margin-top:25px;
-    }
-    .gallery img {
-        width:100%;
-        border-radius:14px;
-        cursor:pointer;
-        transition:0.25s;
-        box-shadow:0 4px 14px rgba(0,0,0,0.12);
-        height:210px;
-        object-fit:cover;
-    }
-    .gallery img:hover {
-        transform:scale(1.05);
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 18px;
+        margin-top: 25px;
     }
 
+    .gallery img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 15px;
+        box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+        transition: 0.3s ease;
+    }
+
+    .gallery img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+    }
 </style>
 </head>
 
@@ -77,23 +98,23 @@
 
 <!-- HERO -->
 <div class="hero">
-    <h1>Baski bo‘limi — TROY Rotary Mashinalari</h1>
+    Baski bo‘limi — TROY Rotary Mashinalari
 </div>
 
-<!-- 10 COLOR -->
-<section>
+<!-- 10 COLOR MACHINE -->
+<section class="border-10">
     <h2>TROY Rotary 10-Color Printing Machine</h2>
 
-    <p><strong>TROY 10 rangli rotatsion bosma mashinasi</strong> murakkab, ko‘p qatlamli va 10 xil rang kombinatsiyasida bosma dizaynlarni mukammal chiqarishga mo‘ljallangan. Katta hajmdagi buyurtmalar uchun eng yuqori aniqlik va barqarorlikni ta’minlaydi.</p>
+    <p><strong>TROY 10 rangli rotatsion bosma mashinasi</strong> murakkab dizaynlar, gradient fonlar va ko‘p bosqichli naqshlarni aniq va yuqori sifatda bosishga mo‘ljallangan premium sanoat uskunasidir.</p>
 
-    <p><strong>Asosiy texnik imkoniyatlar:</strong><br>
-    • 10 ta alohida rang sektsiyasi<br>
+    <p><strong>Asosiy imkoniyatlar:</strong><br>
+    • 10 ta mustaqil rang sektsiyasi<br>
     • 35–55 m/min ishlab chiqarish tezligi<br>
-    • Registr aniqligi juda yuqori<br>
-    • Reaktiv va pigment bo‘yoqlar bilan mos<br>
-    • Uzluksiz ishlab chiqarish uchun stabil mexanizm</p>
+    • Reaktiv/pigment bo‘yoqlar bilan to‘liq moslik<br>
+    • Yuqori aniqlikdagi registr<br>
+    • Katta hajmli buyurtmalar uchun barqaror ish</p>
 
-    <h3 style="margin-top:25px;color:#003366;">10 rangli bosma galereyasi</h3>
+    <h3 style="margin-top:25px; color:#003366;">10 rangli bosma galereyasi</h3>
 
     <div class="gallery">
         <img src="baski10-1.jpg">
@@ -107,20 +128,20 @@
     </div>
 </section>
 
-<!-- 7 COLOR -->
-<section>
+<!-- 7 COLOR MACHINE -->
+<section class="border-7">
     <h2>TROY Rotary 7-Color Printing Machine</h2>
 
-    <p><strong>TROY 7 rangli mashinasi</strong> o‘rta murakkablikdagi naqshlar uchun ideal bo‘lib, ayniqsa bolalar kiyimlari, rangli matolar va o‘rtacha dizaynlar uchun samarali yechimdir.</p>
+    <p><strong>TROY 7 rangli mashinasi</strong> o‘rta murakkablikdagi matolar, bolalar kiyimlari va rang-barang dizaynlar bosishda eng samarali tanlovlardan biri hisoblanadi.</p>
 
-    <p><strong>Asosiy texnik imkoniyatlar:</strong><br>
-    • 7 ta rang moduliga ega<br>
-    • Ishlash tezligi: 30–45 m/min<br>
-    • Paxta, trikotaj va poplin uchun to‘liq mos<br>
+    <p><strong>Imkoniyatlar:</strong><br>
+    • 7 ta rang moduli<br>
+    • 30–45 m/min tezlik<br>
+    • Paxta va trikotaj uchun mos<br>
     • Tejamkor bo‘yoq sarfi<br>
-    • Ranglar aniqligi yuqori</p>
+    • Soft registr tizimi</p>
 
-    <h3 style="margin-top:25px;color:#003366;">7 rangli bosma galereyasi</h3>
+    <h3 style="margin-top:25px; color:#003366;">7 rangli bosma galereyasi</h3>
 
     <div class="gallery">
         <img src="baski7-1.jpg">
@@ -132,20 +153,20 @@
     </div>
 </section>
 
-<!-- 4 COLOR -->
-<section>
+<!-- 4 COLOR MACHINE -->
+<section class="border-4">
     <h2>TROY Fast Rotary — 4-Color Printing Machine</h2>
 
-    <p><strong>TROY 4 rangli bosma mashinasi</strong> sodda va o‘rta dizayndagi buyurtmalarni yuqori tezlikda bajarishga mo‘ljallangan. Sport kiyimlari, fon naqshlari va katta hajmli buyurtmalar uchun tejamkor variant.</p>
+    <p><strong>TROY 4 rangli bosma mashinasi</strong> tezkor ishlab chiqarish, fon naqshlari va katta hajmdagi buyurtmalar uchun eng tejamkor va samarali yechimdir.</p>
 
-    <p><strong>Asosiy texnik imkoniyatlar:</strong><br>
-    • 4 rangni bir vaqtning o‘zida bosadi<br>
-    • Ishlash tezligi: 50–70 m/min<br>
+    <p><strong>Imkoniyatlar:</strong><br>
+    • 4 ta rangni bir vaqtning o‘zida bosadi<br>
+    • 50–70 m/min tezlik<br>
     • Kam energiya sarfi<br>
-    • Oddiy dizaynlar uchun maksimal samaradorlik<br>
-    • Oson boshqaruv paneli</p>
+    • Oddiy dizaynlar uchun ideal<br>
+    • Soddalashtirilgan boshqaruv paneli</p>
 
-    <h3 style="margin-top:25px;color:#003366;">4 rangli bosma galereyasi</h3>
+    <h3 style="margin-top:25px; color:#003366;">4 rangli bosma galereyasi</h3>
 
     <div class="gallery">
         <img src="baski4-1.jfif">
