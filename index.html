@@ -55,6 +55,22 @@
       background: rgba(11, 99, 184, 0.12);
     }
 
+    /* LANGUAGE SELECT IN NAVBAR */
+    #lang-switcher {
+      position: absolute;
+      right: 15px;
+      top: 12px;
+    }
+
+    #lang-switcher select {
+      padding: 6px 10px;
+      border-radius: 8px;
+      border: 1px solid #0b63b8;
+      font-weight: 600;
+      color: #0b63b8;
+      background: white;
+    }
+
     /* === HERO === */
     .hero {
       width: 100%;
@@ -202,9 +218,17 @@
 
   <!-- NAVBAR -->
   <nav>
-    <a href="#biz">Biz haqimizda</a>
-    <a href="#mahsulot">Bo‘limlar</a>
-    <a href="#aloqa">Aloqa</a>
+    <a href="#biz" data-key="nav_biz">Biz haqimizda</a>
+    <a href="#mahsulot" data-key="nav_bolim">Bo‘limlar</a>
+    <a href="#aloqa" data-key="nav_aloqa">Aloqa</a>
+
+    <div id="lang-switcher">
+      <select onchange="setLang(this.value)">
+        <option value="uz">UZ</option>
+        <option value="ru">RU</option>
+        <option value="en">EN</option>
+      </select>
+    </div>
   </nav>
 
   <!-- HERO -->
@@ -212,20 +236,20 @@
 
   <!-- === BIZ HAQIMIZDA === -->
   <section id="biz">
-    <h2>Biz haqimizda</h2>
+    <h2 data-key="biz_title">Biz haqimizda</h2>
 
-    <p>
+    <p data-key="biz_p1">
       <strong>Khiva Textile</strong> — 2022 yilda tashkil etilgan bo‘lib,
       to‘qimachilik mahsulotlarini ishlab chiqarishda <strong>to‘liq ishlab chiqarish
         zanjiriga ega</strong> zamonaviy korxona hisoblanadi.
     </p>
 
-    <p>
+    <p data-key="biz_p2">
       Faoliyatimiz paxta ekilishidan boshlab tayyor mahsulotni eksport qilishgacha bo‘lgan
       barcha jarayonlarni o‘z ichiga oladi.
     </p>
 
-    <p>
+    <p data-key="biz_p3">
       Ishlab chiqarish yo‘nalishlari:
       <br>• Paxta qayta ishlash
       <br>• Tola va ip ishlab chiqarish
@@ -234,9 +258,9 @@
       <br>• Tayyor kiyim-kechak tikish
     </p>
 
-    <h2 style="margin-top:35px;">Ishlab chiqarish quvvati</h2>
+    <h2 data-key="quvvat_title" style="margin-top:35px;">Ishlab chiqarish quvvati</h2>
 
-    <p>
+    <p data-key="quvvat_p">
       <strong>• Paxta qayta ishlash:</strong> 1200 tonna / oy <br>
       <strong>• Ip ishlab chiqarish:</strong> 550 tonna / oy <br>
       <strong>• Trikotaj xom mato:</strong> 250 tonna / oy <br>
@@ -246,28 +270,28 @@
 
   <!-- === ISHLAB CHIQARISH BO‘LIMLARI === -->
   <section id="mahsulot">
-    <h2>Ishlab chiqarish bo‘limlari</h2>
+    <h2 data-key="bolim_title">Ishlab chiqarish bo‘limlari</h2>
 
     <div class="product-grid">
 
       <div class="product-card" onclick="location.href='ip.html'">
         <img src="ip-main.jpg">
-        <h3>Ip yigiruv bo‘limi</h3>
+        <h3 data-key="card_ip">Ip yigiruv bo‘limi</h3>
       </div>
 
       <div class="product-card" onclick="location.href='trikotaj.html'">
         <img src="trikotaj-main.jpg">
-        <h3>Trikotaj bo‘limi</h3>
+        <h3 data-key="card_tr">Trikotaj bo‘limi</h3>
       </div>
 
       <div class="product-card" onclick="location.href='baski.html'">
         <img src="baski-main.jfif">
-        <h3>Baski bo‘limi</h3>
+        <h3 data-key="card_baski">Baski bo‘limi</h3>
       </div>
 
       <div class="product-card" onclick="location.href='tikuv.html'">
         <img src="tikuv-main.jpg">
-        <h3>Tikuvchilik bo‘limi</h3>
+        <h3 data-key="card_tikuv">Tikuvchilik bo‘limi</h3>
       </div>
 
     </div>
@@ -275,13 +299,12 @@
 
   <!-- === ALOQA === -->
   <section id="aloqa">
-    <h2>Aloqa</h2>
+    <h2 data-key="aloqa_title">Aloqa</h2>
 
-    <p><strong>Manzil:</strong> Xiva tumani, Shomoxulim mahallasi</p>
-    <p><strong>Telefon:</strong> +998 91 993 15 15</p>
+    <p data-key="manzil"><strong>Manzil:</strong> Xiva tumani, Shomoxulim mahallasi</p>
+    <p data-key="tel"><strong>Telefon:</strong> +998 91 993 15 15</p>
 
-    <!-- 🔵 YANGILANGAN EMAIL BLOKI (2 TA EMAIL, mailto BOSILADI) -->
-    <p><strong>Email:</strong></p>
+    <p data-key="email_title"><strong>Email:</strong></p>
 
     <p style="margin-top:-8px;">
       <a href="mailto:sales@khivatex.uz"
@@ -296,7 +319,6 @@
         📧 sabirov@khivatex.uz
       </a>
     </p>
-    <!-- 🔵 EMAIL BLOK TUGADI -->
 
     <div class="map-box">
       <iframe
@@ -317,5 +339,101 @@
 
   </section>
 
+  <!-- === LANGUAGE SCRIPT === -->
+  <script>
+    const translations = {
+      uz: {
+        nav_biz: "Biz haqimizda",
+        nav_bolim: "Bo‘limlar",
+        nav_aloqa: "Aloqa",
+
+        biz_title: "Biz haqimizda",
+        biz_p1: "<strong>Khiva Textile</strong> — 2022 yilda tashkil etilgan bo‘lib, to‘qimachilik mahsulotlarida <strong>to‘liq ishlab chiqarish zanjiriga ega</strong> zamonaviy korxona.",
+        biz_p2: "Faoliyatimiz paxta ekilishidan boshlab tayyor mahsulotni eksport qilishgacha bo‘lgan barcha jarayonlarni o‘z ichiga oladi.",
+        biz_p3: "Ishlab chiqarish yo‘nalishlari:<br>• Paxta qayta ishlash <br>• Ip ishlab chiqarish <br>• Trikotaj mato <br>• Matoni bo‘yash <br>• Tikuvchilik",
+
+        quvvat_title: "Ishlab chiqarish quvvati",
+        quvvat_p: "<strong>• Paxta qayta ishlash:</strong> 1200 tonna / oy <br><strong>• Ip ishlab chiqarish:</strong> 550 tonna / oy <br><strong>• Trikotaj mato:</strong> 250 tonna / oy <br><strong>• Tikuvchilik:</strong> 150 000—200 000 dona / oy",
+
+        bolim_title: "Ishlab chiqarish bo‘limlari",
+        card_ip: "Ip yigiruv bo‘limi",
+        card_tr: "Trikotaj bo‘limi",
+        card_baski: "Baski bo‘limi",
+        card_tikuv: "Tikuvchilik bo‘limi",
+
+        aloqa_title: "Aloqa",
+        manzil: "<strong>Manzil:</strong> Xiva tumani, Shomoxulim mahallasi",
+        tel: "<strong>Telefon:</strong> +998 91 993 15 15",
+        email_title: "<strong>Email:</strong>"
+      },
+
+      ru: {
+        nav_biz: "О нас",
+        nav_bolim: "Отделы",
+        nav_aloqa: "Контакты",
+
+        biz_title: "О нас",
+        biz_p1: "<strong>Khiva Textile</strong> — основана в 2022 году, современное предприятие с <strong>полным производственным циклом</strong>.",
+        biz_p2: "Наша деятельность охватывает весь процесс — от выращивания хлопка до экспорта готовой продукции.",
+        biz_p3: "Направления производства:<br>• Переработка хлопка <br>• Производство пряжи <br>• Трикотажное полотно <br>• Крашение <br>• Швейное производство",
+
+        quvvat_title: "Производственные мощности",
+        quvvat_p: "<strong>• Переработка хлопка:</strong> 1200 тонн / месяц <br><strong>• Пряжа:</strong> 550 тонн / месяц <br><strong>• Трикотаж:</strong> 250 тонн / месяц <br><strong>• Швейные изделия:</strong> 150 000—200 000 шт / месяц",
+
+        bolim_title: "Производственные отделы",
+        card_ip: "Прядильный отдел",
+        card_tr: "Трикотажный отдел",
+        card_baski: "Печать тканей",
+        card_tikuv: "Швейный отдел",
+
+        aloqa_title: "Контакты",
+        manzil: "<strong>Адрес:</strong> Хивинский район, махалля Шомохулим",
+        tel: "<strong>Телефон:</strong> +998 91 993 15 15",
+        email_title: "<strong>Email:</strong>"
+      },
+
+      en: {
+        nav_biz: "About Us",
+        nav_bolim: "Departments",
+        nav_aloqa: "Contact",
+
+        biz_title: "About Us",
+        biz_p1: "<strong>Khiva Textile</strong> — established in 2022, a modern company with a <strong>full production chain</strong>.",
+        biz_p2: "Our operations cover the entire process — from cotton growing to exporting final garments.",
+        biz_p3: "Production areas:<br>• Cotton processing <br>• Yarn production <br>• Knitted fabric <br>• Dyeing <br>• Garment sewing",
+
+        quvvat_title: "Production Capacity",
+        quvvat_p: "<strong>• Cotton processing:</strong> 1200 tons / month <br><strong>• Yarn production:</strong> 550 tons / month <br><strong>• Knitted fabric:</strong> 250 tons / month <br><strong>• Garment sewing:</strong> 150 000—200 000 pcs / month",
+
+        bolim_title: "Production Departments",
+        card_ip: "Yarn Spinning",
+        card_tr: "Knitting",
+        card_baski: "Fabric Printing",
+        card_tikuv: "Sewing Department",
+
+        aloqa_title: "Contact",
+        manzil: "<strong>Address:</strong> Khiva district, Shomoxulim",
+        tel: "<strong>Phone:</strong> +998 91 993 15 15",
+        email_title: "<strong>Email:</strong>"
+      }
+    };
+
+    function setLang(lang) {
+      localStorage.setItem("lang", lang);
+      document.querySelectorAll("[data-key]").forEach(el => {
+        const key = el.getAttribute("data-key");
+        el.innerHTML = translations[lang][key];
+      });
+      document.documentElement.lang = lang;
+    }
+
+    window.onload = () => {
+      const saved = localStorage.getItem("lang") || "uz";
+      document.querySelector("#lang-switcher select").value = saved;
+      setLang(saved);
+    };
+  </script>
+
 </body>
+
 </html>
