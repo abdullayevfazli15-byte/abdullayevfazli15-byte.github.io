@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ayollar kiyimlari</title>
+<title data-key="title_page">Ayollar kiyimlari</title>
 
 <style>
 body {
@@ -101,15 +101,41 @@ h2 {
     border-color: #ff3cad;
     box-shadow: 0 10px 25px rgba(255,60,173,0.25);
 }
+
+/* LANGUAGE SWITCHER */
+#lang-switcher {
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    z-index: 9999;
+}
+
+#lang-switcher select {
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid #ff3cad;
+    font-weight: 600;
+    color: #ff3cad;
+    background: white;
+}
 </style>
 </head>
 
 <body>
 
+<!-- LANGUAGE SWITCHER -->
+<div id="lang-switcher">
+    <select onchange="setLang(this.value)">
+      <option value="uz">UZ</option>
+      <option value="ru">RU</option>
+      <option value="en">EN</option>
+    </select>
+</div>
+
 <div class="container">
 
-    <h2>Ayollar kiyimlari</h2>
-    <p class="desc">Biz ishlab chiqaradigan ayollar kiyimlari modellari:</p>
+    <h2 data-key="title_page">Ayollar kiyimlari</h2>
+    <p class="desc" data-key="subtitle">Biz ishlab chiqaradigan ayollar kiyimlari modellari:</p>
 
     <div class="products">
         <div class="product"><img src="ayol1.jpg"><p>Model 1</p></div>
@@ -124,10 +150,48 @@ h2 {
     </div>
 
     <div class="back-btn">
-        <a href="javascript:history.back()">⬅ Orqaga qaytish</a>
+        <a href="javascript:history.back()" data-key="back_btn">⬅ Orqaga qaytish</a>
     </div>
 
 </div>
+
+<!-- TRANSLATION SCRIPT -->
+<script>
+const translations = {
+    uz: {
+        title_page: "Ayollar kiyimlari",
+        subtitle: "Biz ishlab chiqaradigan ayollar kiyimlari modellari:",
+        back_btn: "⬅ Orqaga qaytish"
+    },
+
+    ru: {
+        title_page: "Женская одежда",
+        subtitle: "Модели женской одежды, которые мы производим:",
+        back_btn: "⬅ Назад"
+    },
+
+    en: {
+        title_page: "Women’s Clothing",
+        subtitle: "Models of women's clothing we manufacture:",
+        back_btn: "⬅ Back"
+    }
+};
+
+function setLang(lang) {
+    localStorage.setItem("lang", lang);
+    document.querySelectorAll("[data-key]").forEach(el => {
+        let key = el.getAttribute("data-key");
+        el.innerHTML = translations[lang][key];
+    });
+    document.documentElement.lang = lang;
+}
+
+window.onload = () => {
+    let saved = localStorage.getItem("lang") || "uz";
+    document.querySelector("#lang-switcher select").value = saved;
+    setLang(saved);
+};
+</script>
 
 </body>
 </html>
