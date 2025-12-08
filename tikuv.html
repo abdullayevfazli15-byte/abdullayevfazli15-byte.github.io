@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tikuv bo‘limi</title>
+<title data-key="title_page">Tikuv bo‘limi</title>
 
 <!-- Google Material Icons -->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -46,6 +46,23 @@ h1 {
     font-weight: 700;
     color: #111;
     margin-bottom: 10px;
+}
+
+/* Language switcher */
+#lang-switcher {
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    z-index: 9999;
+}
+
+#lang-switcher select {
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid #0b63b8;
+    font-weight: 600;
+    color: #0b63b8;
+    background: white;
 }
 
 .desc {
@@ -117,7 +134,7 @@ h1 {
     color: #111;
 }
 
-/* ---------- RIPPLE EFFECT ---------- */
+/* ---------- RIPPLE ---------- */
 .card::after {
     content: "";
     position: absolute;
@@ -147,26 +164,35 @@ h1 {
 
 <body>
 
+<!-- LANGUAGE SWITCHER -->
+<div id="lang-switcher">
+    <select onchange="setLang(this.value)">
+      <option value="uz">UZ</option>
+      <option value="ru">RU</option>
+      <option value="en">EN</option>
+    </select>
+</div>
+
 <div class="container">
 
-    <h1>Tikuv bo‘limi</h1>
-    <p class="desc">Kiyim toifalaridan birini tanlang:</p>
+    <h1 data-key="title_page">Tikuv bo‘limi</h1>
+    <p class="desc" data-key="subtitle">Kiyim toifalaridan birini tanlang:</p>
 
     <div class="cards">
 
         <div class="card" onclick="navigate('erkaklar.html')">
             <span class="material-icons icon">man</span>
-            <div class="card-title">Erkaklar kiyimlari</div>
+            <div class="card-title" data-key="men">Erkaklar kiyimlari</div>
         </div>
 
         <div class="card" onclick="navigate('ayollar.html')">
             <span class="material-icons icon">woman</span>
-            <div class="card-title">Ayollar kiyimlari</div>
+            <div class="card-title" data-key="women">Ayollar kiyimlari</div>
         </div>
 
         <div class="card" onclick="navigate('bolalar.html')">
             <span class="material-icons icon">child_care</span>
-            <div class="card-title">Bolalar kiyimlari</div>
+            <div class="card-title" data-key="kids">Bolalar kiyimlari</div>
         </div>
 
     </div>
@@ -180,6 +206,48 @@ function navigate(url) {
         window.location.href = url;
     }, 500);
 }
+
+/* --- TRANSLATIONS --- */
+const translations = {
+    uz: {
+        title_page: "Tikuv bo‘limi",
+        subtitle: "Kiyim toifalaridan birini tanlang:",
+        men: "Erkaklar kiyimlari",
+        women: "Ayollar kiyimlari",
+        kids: "Bolalar kiyimlari"
+    },
+
+    ru: {
+        title_page: "Швейный отдел",
+        subtitle: "Выберите категорию одежды:",
+        men: "Мужская одежда",
+        women: "Женская одежда",
+        kids: "Детская одежда"
+    },
+
+    en: {
+        title_page: "Sewing Department",
+        subtitle: "Choose a clothing category:",
+        men: "Men's Clothing",
+        women: "Women's Clothing",
+        kids: "Kids' Clothing"
+    }
+};
+
+function setLang(lang) {
+    localStorage.setItem("lang", lang);
+    document.querySelectorAll("[data-key]").forEach(el => {
+        const key = el.getAttribute("data-key");
+        el.innerHTML = translations[lang][key];
+    });
+    document.documentElement.lang = lang;
+}
+
+window.onload = () => {
+    const saved = localStorage.getItem("lang") || "uz";
+    document.querySelector("#lang-switcher select").value = saved;
+    setLang(saved);
+};
 </script>
 
 </body>
