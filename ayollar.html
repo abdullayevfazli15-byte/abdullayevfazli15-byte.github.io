@@ -40,14 +40,12 @@ h2 {
     margin-bottom: 30px;
 }
 
-/* GRID */
 .products {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 28px;
 }
 
-/* CARD */
 .product {
     background: rgba(255,255,255,0.75);
     border-radius: 18px;
@@ -60,25 +58,48 @@ h2 {
 .product:hover {
     transform: translateY(-10px) scale(1.03);
     box-shadow: 0 16px 35px rgba(0,0,0,0.2);
-    border: 2px solid #ff62c0; /* Pink neon */
+    border: 2px solid #ff3cad;
 }
 
-/* IMAGES FIXED SIZE */
 .product img {
     width: 100%;
     height: 320px;
     object-fit: cover;
-    object-position: center;
     border-bottom: 1px solid #eee;
 }
 
-/* TITLE */
 .product p {
     text-align: center;
     padding: 14px;
     font-size: 18px;
     font-weight: 600;
     color: #222;
+}
+
+.back-btn {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+.back-btn a {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #ffffff;
+    border-radius: 30px;
+    font-size: 18px;
+    color: #222;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    border: 2px solid transparent;
+    transition: 0.3s ease;
+}
+
+.back-btn a:hover {
+    transform: translateY(-4px);
+    border-color: #ff3cad;
+    box-shadow: 0 10px 25px rgba(255,60,173,0.25);
 }
 </style>
 </head>
@@ -91,7 +112,6 @@ h2 {
     <p class="desc">Biz ishlab chiqaradigan ayollar kiyimlari modellari:</p>
 
     <div class="products">
-
         <div class="product"><img src="ayol1.jpg"><p>Model 1</p></div>
         <div class="product"><img src="ayol2.jpg"><p>Model 2</p></div>
         <div class="product"><img src="ayol3.jpg"><p>Model 3</p></div>
@@ -101,7 +121,10 @@ h2 {
         <div class="product"><img src="ayol7.jpg"><p>Model 7</p></div>
         <div class="product"><img src="ayol8.jpg"><p>Model 8</p></div>
         <div class="product"><img src="ayol9.jpg"><p>Model 9</p></div>
+    </div>
 
+    <div class="back-btn">
+        <a href="javascript:history.back()">⬅ Orqaga qaytish</a>
     </div>
 
 </div>
