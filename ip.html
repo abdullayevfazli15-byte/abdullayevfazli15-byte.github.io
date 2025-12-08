@@ -22,7 +22,7 @@
       to { opacity: 1; }
     }
 
-    /* UNIVERSAL BACK BUTTON (baski va trikotaj bilan bir xil) */
+    /* BACK BUTTON */
     .back-btn {
       position: fixed;
       top: 18px;
@@ -45,6 +45,24 @@
       transform: translateY(-3px);
     }
 
+    /* LANGUAGE SWITCHER */
+    #lang-switcher {
+      position: fixed;
+      top: 18px;
+      right: 18px;
+      z-index: 9999;
+    }
+
+    #lang-switcher select {
+      padding: 8px 12px;
+      border-radius: 10px;
+      border: 1px solid #0b63b8;
+      font-weight: 600;
+      color: #0b63b8;
+      background: white;
+    }
+
+    /* NAVBAR */
     header {
       background: #ffffffcc;
       backdrop-filter: blur(10px);
@@ -108,7 +126,7 @@
       letter-spacing: -0.5px;
     }
 
-    /* Premium cards */
+    /* PRODUCT CARDS */
     .card {
       background: linear-gradient(135deg, #ffffff, #fdfdfd);
       padding: 20px;
@@ -141,23 +159,32 @@
 
 <body>
 
-  <!-- UNIVERSAL BACK BUTTON -->
-  <a href="index.html" class="back-btn">⬅ Ortga</a>
+  <!-- BACK BUTTON -->
+  <a href="index.html" class="back-btn" data-key="back_btn">⬅ Ortga</a>
+
+  <!-- LANGUAGE SWITCHER -->
+  <div id="lang-switcher">
+    <select onchange="setLang(this.value)">
+      <option value="uz">UZ</option>
+      <option value="ru">RU</option>
+      <option value="en">EN</option>
+    </select>
+  </div>
 
   <!-- NAVBAR -->
   <header>
-    <a href="index.html">Bosh sahifa</a>
-    <a href="index.html#mahsulot">Mahsulotlar</a>
-    <a href="index.html#aloqa">Aloqa</a>
+    <a href="index.html" data-key="nav_home">Bosh sahifa</a>
+    <a href="index.html#mahsulot" data-key="nav_products">Mahsulotlar</a>
+    <a href="index.html#aloqa" data-key="nav_contact">Aloqa</a>
   </header>
 
   <main>
 
     <div class="hero">
-      <img src="ip(3).jpg" alt="Ip mahsulotlari rasmi">
+      <img src="ip(3).jpg" alt="">
     </div>
 
-    <h1>Ip mahsulotlari</h1>
+    <h1 data-key="title_text">Ip mahsulotlari</h1>
 
     <div class="card" onclick="window.open('12-1oe.pdf','_blank')">Ne 12/1</div>
     <div class="card" onclick="window.open('16-1oe.pdf','_blank')">Ne 16/1</div>
@@ -170,6 +197,50 @@
     <div class="card" onclick="window.open('40-1oe.pdf','_blank')">Ne 40/1</div>
 
   </main>
+
+  <!-- TRANSLATION SCRIPT -->
+  <script>
+    const translations = {
+      uz: {
+        back_btn: "⬅ Ortga",
+        nav_home: "Bosh sahifa",
+        nav_products: "Mahsulotlar",
+        nav_contact: "Aloqa",
+        title_text: "Ip mahsulotlari"
+      },
+      ru: {
+        back_btn: "⬅ Назад",
+        nav_home: "Главная",
+        nav_products: "Продукция",
+        nav_contact: "Контакты",
+        title_text: "Пряжная продукция"
+      },
+      en: {
+        back_btn: "⬅ Back",
+        nav_home: "Home",
+        nav_products: "Products",
+        nav_contact: "Contact",
+        title_text: "Yarn Products"
+      }
+    };
+
+    function setLang(lang) {
+      localStorage.setItem("lang", lang);
+
+      document.querySelectorAll("[data-key]").forEach(el => {
+        const key = el.getAttribute("data-key");
+        el.innerHTML = translations[lang][key];
+      });
+
+      document.documentElement.lang = lang;
+    }
+
+    window.onload = () => {
+      const saved = localStorage.getItem("lang") || "uz";
+      document.querySelector("#lang-switcher select").value = saved;
+      setLang(saved);
+    };
+  </script>
 
 </body>
 </html>
