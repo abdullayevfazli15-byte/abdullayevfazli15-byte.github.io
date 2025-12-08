@@ -49,27 +49,25 @@ h2 {
 
 /* CARD */
 .product {
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(255,255,255,0.75);
     border-radius: 18px;
     overflow: hidden;
     box-shadow: 0 6px 25px rgba(0,0,0,0.12);
     transition: 0.35s ease;
     cursor: pointer;
-    transform-style: preserve-3d;
 }
 
 .product:hover {
     transform: translateY(-10px) scale(1.03);
     box-shadow: 0 16px 35px rgba(0,0,0,0.2);
-    border: 2px solid #00c6ff;
+    border: 2px solid #00a2ff;
 }
 
-/* IMAGES FIXED SIZE */
+/* IMAGE FIX SIZE */
 .product img {
     width: 100%;
-    height: 320px;       /* barcha rasm bir xil bo'ladi */
+    height: 320px;
     object-fit: cover;
-    object-position: center;
     border-bottom: 1px solid #eee;
 }
 
@@ -80,6 +78,33 @@ h2 {
     font-size: 18px;
     font-weight: 600;
     color: #222;
+}
+
+/* BACK BUTTON */
+.back-btn {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+.back-btn a {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #ffffff;
+    border-radius: 30px;
+    font-size: 18px;
+    color: #222;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    border: 2px solid transparent;
+    transition: 0.3s ease;
+}
+
+.back-btn a:hover {
+    transform: translateY(-4px);
+    border-color: #00a2ff;
+    box-shadow: 0 10px 25px rgba(0,162,255,0.25);
 }
 </style>
 </head>
@@ -92,47 +117,18 @@ h2 {
     <p class="desc">Biz ishlab chiqaradigan erkaklar kiyimlari modellari:</p>
 
     <div class="products">
+        <div class="product"><img src="erkak1.webp"><p>Model 1</p></div>
+        <div class="product"><img src="erkak2.jpg"><p>Model 2</p></div>
+        <div class="product"><img src="erkak3.jpg"><p>Model 3</p></div>
+        <div class="product"><img src="erkak4.jpg"><p>Model 4</p></div>
+        <div class="product"><img src="erkak5.jpg"><p>Model 5</p></div>
+        <div class="product"><img src="erkak6.jpg"><p>Model 6</p></div>
+        <div class="product"><img src="erkak7.jpg"><p>Model 7</p></div>
+        <div class="product"><img src="erkak8.jpg"><p>Model 8</p></div>
+    </div>
 
-        <div class="product">
-            <img src="erkak1.webp">
-            <p>Model 1</p>
-        </div>
-
-        <div class="product">
-            <img src="erkak2.jpg">
-            <p>Model 2</p>
-        </div>
-
-        <div class="product">
-            <img src="erkak3.jpg">
-            <p>Model 3</p>
-        </div>
-
-        <div class="product">
-            <img src="erkak4.jpg">
-            <p>Model 4</p>
-        </div>
-
-        <div class="product">
-            <img src="erkak5.jpg">
-            <p>Model 5</p>
-        </div>
-
-        <div class="product">
-            <img src="erkak6.jpg">
-            <p>Model 6</p>
-        </div>
-
-        <div class="product">
-            <img src="erkak7.jpg">
-            <p>Model 7</p>
-        </div>
-
-        <div class="product">
-            <img src="erkak8.jpg">
-            <p>Model 8</p>
-        </div>
-
+    <div class="back-btn">
+        <a href="javascript:history.back()">⬅ Orqaga qaytish</a>
     </div>
 
 </div>
