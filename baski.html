@@ -21,7 +21,7 @@
         color: #1f2937;
     }
 
-    /* ORTGA QAYTISH TUGMASI */
+    /* ORTGA QAYTISH */
     .back-btn {
         position: fixed;
         top: 18px;
@@ -38,10 +38,22 @@
         transition: 0.25s ease;
         z-index: 9999;
     }
+    .back-btn:hover { background: rgba(255,255,255,0.92); transform: translateY(-3px); }
 
-    .back-btn:hover {
-        background: rgba(255,255,255,0.92);
-        transform: translateY(-3px);
+    /* TIL SWITCHER */
+    #lang-switcher {
+        position: fixed;
+        top: 18px;
+        right: 18px;
+        z-index: 9999;
+    }
+    #lang-switcher select {
+        padding: 8px 12px;
+        border-radius: 10px;
+        border: 1px solid #0b63b8;
+        font-weight: 600;
+        color: #0b63b8;
+        background: white;
     }
 
     /* HERO */
@@ -59,7 +71,7 @@
         box-shadow: 0 8px 20px #0002;
     }
 
-    /* SECTION CARD */
+    /* SECTION */
     section {
         max-width: 1100px;
         margin: 45px auto;
@@ -70,37 +82,21 @@
         backdrop-filter: blur(10px);
         animation: fadeUp 0.6s ease;
     }
+    @keyframes fadeUp { from {opacity: 0; transform: translateY(20px);} to {opacity: 1; transform: translateY(0);} }
 
-    @keyframes fadeUp {
-        from {opacity: 0; transform: translateY(20px);}
-        to   {opacity: 1; transform: translateY(0);}
-    }
+    h2 { font-size: 28px; font-weight: 900; margin-bottom: 12px; }
+    p { font-size: 17px; line-height: 1.7; margin-bottom: 12px; }
 
-    h2 {
-        font-size: 28px;
-        font-weight: 900;
-        margin-bottom: 12px;
-    }
-
-    p {
-        font-size: 17px;
-        line-height: 1.7;
-        margin-bottom: 12px;
-    }
-
-    /* SECTION BORDER COLOR ACCENT */
     .border-10 { border-left: 8px solid var(--accent1); }
     .border-7  { border-left: 8px solid var(--accent2); }
     .border-4  { border-left: 8px solid var(--accent3); }
 
-    /* GALLERY GRID */
     .gallery {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
         gap: 18px;
         margin-top: 25px;
     }
-
     .gallery img {
         width: 100%;
         height: 220px;
@@ -109,7 +105,6 @@
         box-shadow: 0 6px 16px rgba(0,0,0,0.12);
         transition: 0.3s ease;
     }
-
     .gallery img:hover {
         transform: scale(1.05);
         box-shadow: 0 10px 25px rgba(0,0,0,0.18);
@@ -119,28 +114,39 @@
 
 <body>
 
-<!-- ORTGA QAYTISH TUGMASI -->
-<a href="index.html" class="back-btn">⬅ Ortga</a>
+<!-- BACK -->
+<a href="index.html" class="back-btn" data-key="back_btn">⬅ Ortga</a>
+
+<!-- LANGUAGE -->
+<div id="lang-switcher">
+    <select onchange="setLang(this.value)">
+      <option value="uz">UZ</option>
+      <option value="ru">RU</option>
+      <option value="en">EN</option>
+    </select>
+</div>
 
 <!-- HERO -->
-<div class="hero">
+<div class="hero" data-key="hero_title">
     Baski bo‘limi — TROY Rotary Mashinalari
 </div>
 
-<!-- 10 COLOR MACHINE -->
+<!-- 10 COLOR -->
 <section class="border-10">
-    <h2>TROY Rotary 10-Color Printing Machine</h2>
+    <h2 data-key="t10_title">TROY Rotary 10-Color Printing Machine</h2>
 
-    <p><strong>TROY 10 rangli rotatsion bosma mashinasi</strong> murakkab dizaynlar, gradient fonlar va ko‘p bosqichli naqshlarni aniq va yuqori sifatda bosishga mo‘ljallangan premium sanoat uskunasidir.</p>
+    <p data-key="t10_p1"><strong>TROY 10 rangli rotatsion bosma mashinasi</strong> murakkab dizaynlar, gradient fonlar va ko‘p bosqichli naqshlarni aniq va yuqori sifatda bosishga mo‘ljallangan premium uskunadir.</p>
 
-    <p><strong>Asosiy imkoniyatlar:</strong><br>
+    <p data-key="t10_p2"><strong>Asosiy imkoniyatlar:</strong><br>
     • 10 ta mustaqil rang sektsiyasi<br>
     • 35–55 m/min ishlab chiqarish tezligi<br>
-    • Reaktiv/pigment bo‘yoqlar bilan to‘liq moslik<br>
+    • Reaktiv/pigment bo‘yoqlar mosligi<br>
     • Yuqori aniqlikdagi registr<br>
     • Katta hajmli buyurtmalar uchun barqaror ish</p>
 
-    <h3 style="margin-top:25px; color:#003366;">10 rangli bosma galereyasi</h3>
+    <h3 style="margin-top:25px; color:#003366;" data-key="t10_gallery_title">
+        10 rangli bosma galereyasi
+    </h3>
 
     <div class="gallery">
         <img src="baski10-1.jpg">
@@ -154,20 +160,22 @@
     </div>
 </section>
 
-<!-- 7 COLOR MACHINE -->
+<!-- 7 COLOR -->
 <section class="border-7">
-    <h2>TROY Rotary 7-Color Printing Machine</h2>
+    <h2 data-key="t7_title">TROY Rotary 7-Color Printing Machine</h2>
 
-    <p><strong>TROY 7 rangli mashinasi</strong> o‘rta murakkablikdagi matolar, bolalar kiyimlari va rang-barang dizaynlar bosishda eng samarali tanlovlardan biri hisoblanadi.</p>
+    <p data-key="t7_p1"><strong>TROY 7 rangli mashinasi</strong> o‘rta murakkablikdagi matolar va bolalar kiyimlari uchun eng samarali tanlovlardan biri.</p>
 
-    <p><strong>Imkoniyatlar:</strong><br>
+    <p data-key="t7_p2"><strong>Imkoniyatlar:</strong><br>
     • 7 ta rang moduli<br>
     • 30–45 m/min tezlik<br>
-    • Paxta va trikotaj uchun mos<br>
+    • Paxta va trikotaj mosligi<br>
     • Tejamkor bo‘yoq sarfi<br>
     • Soft registr tizimi</p>
 
-    <h3 style="margin-top:25px; color:#003366;">7 rangli bosma galereyasi</h3>
+    <h3 style="margin-top:25px; color:#003366;" data-key="t7_gallery_title">
+        7 rangli bosma galereyasi
+    </h3>
 
     <div class="gallery">
         <img src="baski7-1.jpg">
@@ -179,20 +187,22 @@
     </div>
 </section>
 
-<!-- 4 COLOR MACHINE -->
+<!-- 4 COLOR -->
 <section class="border-4">
-    <h2>TROY Fast Rotary — 4-Color Printing Machine</h2>
+    <h2 data-key="t4_title">TROY Fast Rotary — 4-Color Printing Machine</h2>
 
-    <p><strong>TROY 4 rangli bosma mashinasi</strong> tezkor ishlab chiqarish, fon naqshlari va katta hajmdagi buyurtmalar uchun eng tejamkor va samarali yechimdir.</p>
+    <p data-key="t4_p1"><strong>TROY 4 rangli bosma mashinasi</strong> tezkor ishlab chiqarish va katta hajmdagi buyurtmalar uchun samarali yechimdir.</p>
 
-    <p><strong>Imkoniyatlar:</strong><br>
+    <p data-key="t4_p2"><strong>Imkoniyatlar:</strong><br>
     • 4 ta rangni bir vaqtning o‘zida bosadi<br>
     • 50–70 m/min tezlik<br>
     • Kam energiya sarfi<br>
     • Oddiy dizaynlar uchun ideal<br>
     • Soddalashtirilgan boshqaruv paneli</p>
 
-    <h3 style="margin-top:25px; color:#003366;">4 rangli bosma galereyasi</h3>
+    <h3 style="margin-top:25px; color:#003366;" data-key="t4_gallery_title">
+        4 rangli bosma galereyasi
+    </h3>
 
     <div class="gallery">
         <img src="baski4-1.jfif">
@@ -204,6 +214,86 @@
         <img src="baski4-7.png">
     </div>
 </section>
+
+<!-- TRANSLATION SCRIPT -->
+<script>
+const translations = {
+    uz: {
+        back_btn: "⬅ Ortga",
+        hero_title: "Baski bo‘limi — TROY Rotary Mashinalari",
+
+        t10_title: "TROY Rotary 10-Color Printing Machine",
+        t10_p1: "<strong>TROY 10 rangli rotatsion bosma mashinasi</strong> murakkab dizaynlar, gradient fonlar va ko‘p bosqichli naqshlarni aniq va sifatli bosadi.",
+        t10_p2: "<strong>Asosiy imkoniyatlar:</strong><br>• 10 ta rang sektsiyasi<br>• 35–55 m/min tezlik<br>• Reaktiv/pigment<br>• Yuqori registr aniqligi<br>• Katta buyurtmalar uchun ideal",
+        t10_gallery_title: "10 rangli bosma galereyasi",
+
+        t7_title: "TROY Rotary 7-Color Printing Machine",
+        t7_p1: "<strong>TROY 7 rangli mashinasi</strong> bolalar kiyimlari va rangli dizaynlar uchun samarador.",
+        t7_p2: "<strong>Imkoniyatlar:</strong><br>• 7 ta rang moduli<br>• 30–45 m/min<br>• Paxta/trikotaj mosligi<br>• Tejamkor bo‘yoq sarfi<br>• Soft registr",
+        t7_gallery_title: "7 rangli bosma galereyasi",
+
+        t4_title: "TROY Fast Rotary — 4-Color Printing Machine",
+        t4_p1: "<strong>TROY 4 rangli mashinasi</strong> tezkor ishlab chiqarish uchun eng yaxshi yechim.",
+        t4_p2: "<strong>Imkoniyatlar:</strong><br>• 4 rang bir vaqtning o‘zida<br>• 50–70 m/min<br>• Energiya tejamkor<br>• Oddiy dizaynlar uchun mos<br>• Oson boshqaruv",
+        t4_gallery_title: "4 rangli bosma galereyasi"
+    },
+
+    ru: {
+        back_btn: "⬅ Назад",
+        hero_title: "Печатный отдел — машины TROY Rotary",
+
+        t10_title: "TROY Rotary 10-Color Printing Machine",
+        t10_p1: "<strong>10-цветная машина TROY</strong> идеально подходит для сложных дизайнов и градиентов.",
+        t10_p2: "<strong>Возможности:</strong><br>• 10 цветовых секций<br>• 35–55 м/мин<br>• Реактив/пигмент<br>• Высокая точность регистрации<br>• Для больших заказов",
+        t10_gallery_title: "Галерея 10-цветной печати",
+
+        t7_title: "TROY Rotary 7-Color Printing Machine",
+        t7_p1: "<strong>7-цветная машина TROY</strong> оптимальна для детских и цветных тканей.",
+        t7_p2: "<strong>Возможности:</strong><br>• 7 модулей<br>• 30–45 м/мин<br>• Хлопок/трикотаж<br>• Экономичный расход краски<br>• Soft-регистрация",
+        t7_gallery_title: "Галерея 7-цветной печати",
+
+        t4_title: "TROY Fast Rotary — 4-Color Printing Machine",
+        t4_p1: "<strong>4-цветная машина</strong> — лучшее решение для массовых заказов.",
+        t4_p2: "<strong>Возможности:</strong><br>• Одновременная печать 4 цветов<br>• 50–70 м/мин<br>• Низкое энергопотребление<br>• Для простых дизайнов<br>• Удобная панель",
+        t4_gallery_title: "Галерея 4-цветной печати"
+    },
+
+    en: {
+        back_btn: "⬅ Back",
+        hero_title: "Printing Department — TROY Rotary Machines",
+
+        t10_title: "TROY Rotary 10-Color Printing Machine",
+        t10_p1: "<strong>TROY 10-color rotary printer</strong> is designed for complex designs and gradient patterns.",
+        t10_p2: "<strong>Features:</strong><br>• 10 color sections<br>• 35–55 m/min<br>• Reactive/pigment<br>• High registration accuracy<br>• Ideal for large orders",
+        t10_gallery_title: "10-Color Printing Gallery",
+
+        t7_title: "TROY Rotary 7-Color Printing Machine",
+        t7_p1: "<strong>TROY 7-color machine</strong> is optimal for kidswear and colorful fabric printing.",
+        t7_p2: "<strong>Features:</strong><br>• 7 color modules<br>• 30–45 m/min<br>• Cotton/knit compatible<br>• Low dye consumption<br>• Soft registration system",
+        t7_gallery_title: "7-Color Printing Gallery",
+
+        t4_title: "TROY Fast Rotary — 4-Color Printing Machine",
+        t4_p1: "<strong>TROY 4-color machine</strong> is ideal for fast production and big orders.",
+        t4_p2: "<strong>Features:</strong><br>• Prints 4 colors simultaneously<br>• 50–70 m/min<br>• Low energy use<br>• Great for simple designs<br>• Easy control panel",
+        t4_gallery_title: "4-Color Printing Gallery"
+    }
+};
+
+function setLang(lang) {
+    localStorage.setItem("lang", lang);
+    document.querySelectorAll("[data-key]").forEach(el => {
+        const key = el.getAttribute("data-key");
+        el.innerHTML = translations[lang][key];
+    });
+    document.documentElement.lang = lang;
+}
+
+window.onload = () => {
+    const saved = localStorage.getItem("lang") || "uz";
+    document.querySelector("#lang-switcher select").value = saved;
+    setLang(saved);
+};
+</script>
 
 </body>
 </html>
