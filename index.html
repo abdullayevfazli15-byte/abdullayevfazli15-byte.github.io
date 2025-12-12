@@ -76,8 +76,7 @@
     }
     .hero h1 { font-size: 46px; letter-spacing: .6px; margin-bottom: 8px; font-weight:900; }
     .hero p { font-size: 18px; opacity: .95; }
-
-    /* === GENERAL SECTION === */
+      /* === GENERAL SECTION === */
     section {
       max-width: 1000px;
       margin: 40px auto;
@@ -192,7 +191,6 @@
     /* === MAP === */
     .map-box { margin-top: 25px; border-radius: 20px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
     iframe { width: 100%; height: 380px; border:0; }
-
     /* SOCIAL ICONS */
     .social-box { margin-top: 25px; display:flex; justify-content:center; gap:25px; }
     .social { width:55px; height:55px; background:#0b63b8; color:white; font-size:26px; display:flex; align-items:center; justify-content:center; border-radius:50%; transition:0.3s; text-decoration:none; box-shadow: 0 6px 18px rgba(0,0,0,0.18); }
@@ -210,7 +208,6 @@
       .p-item .icon { width:46px;height:46px; }
     }
 
-    /* small helper to align inline svg stroke color */
     .icon svg { display:block; }
   </style>
 </head>
@@ -234,149 +231,143 @@
 
   <!-- HERO -->
   <header class="hero">
-    <!-- optional hero text could go here -->
     <div class="hero-inner" aria-hidden="true" style="display:none;">
       <h1>Khiva Textile</h1>
       <p>Sifat, ishonch va zamonaviylik</p>
     </div>
   </header>
 
-  <!-- === RASMIIY KORPORATIV "BIZ HAQIMIZDA" (outline ikonli) === -->
+  <!-- === BIZ HAQIMIZDA === -->
   <section id="biz" class="about-pro">
 
     <div class="about-header">
       <h2 data-key="biz_title">Biz haqimizda</h2>
-      <div class="line" aria-hidden="true"></div>
+      <div class="line"></div>
     </div>
 
     <p class="about-main" data-key="biz_p1">
-      <strong>Khiva Textile</strong> — 2022 yilda tashkil etilgan, zamonaviy texnologiyalar va xalqaro standartlar asosida
-      ishlab chiqaruvchi korxona. Biz paxtadan tortib tayyor kiyimgacha bo‘lgan to‘liq ishlab chiqarish zanjirini boshqaramiz.
+      <strong>Khiva Textile</strong> — 2022 yilda tashkil etilgan...
     </p>
 
     <p class="about-main" data-key="biz_p2">
-      Har bir bosqichda sifat nazorati, ekologik me’yorlarga rioya qilish va ishlab chiqarish samaradorligini oshirishga alohida e’tibor beramiz.
+      Har bir bosqichda sifat nazorati...
     </p>
 
-    <h3 class="sub-title">Ishlab chiqarish yo‘nalishlari</h3>
+    <h3 class="sub-title" data-key="yon_title">Ishlab chiqarish yo‘nalishlari</h3>
 
-    <!-- process grid with outline icons (inline SVG) -->
-    <div class="process-grid" role="list" aria-label="Ishlab chiqarish yo'nalishlari">
+    <!-- === PROCESS GRID (Tarjima ulangan) === -->
+    <div class="process-grid">
 
-      <div class="p-item" role="listitem">
-        <div class="icon" aria-hidden="true">
-          <!-- Outline cotton/factory icon (simple) -->
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0b63b8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20 8.5a3 3 0 0 0-2.8-3c-.2-1-1.1-1.5-2-1.5-1 0-1.8.7-2 1.6A3 3 0 0 0 9 6.5 3 3 0 0 0 7 9a3 3 0 0 0 1 2.1"></path>
-            <path d="M12 21V12"></path>
-            <path d="M8 17h8"></path>
+      <div class="p-item">
+        <div class="icon">
+          <svg width="28" height="28" stroke="#0b63b8" fill="none" stroke-width="1.6">
+            <path d="M20 8.5a3 3 0 0 0-2.8-3c-.2-1-1.1-1.5-2-1.5-1 0-1.8.7-2 1.6A3 3 0 0 0 9 6.5 3 3 0 0 0 7 9a3 3 0 0 0 1 2.1"/>
+            <path d="M12 21V12"/>
+            <path d="M8 17h8"/>
           </svg>
         </div>
-        <div class="label">Paxta qayta ishlash</div>
+        <div class="label" data-key="yon_cotton">Paxta qayta ishlash</div>
       </div>
 
-      <div class="p-item" role="listitem">
-        <div class="icon" aria-hidden="true">
-          <!-- yarn / thread icon outline -->
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0b63b8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="7"></circle>
-            <path d="M5 9c3 0 3-3 7-3s4 3 7 3"></path>
-            <path d="M12 19c1-2 4-3 6-3"></path>
+      <div class="p-item">
+        <div class="icon">
+          <svg width="28" height="28" fill="none" stroke="#0b63b8" stroke-width="1.6">
+            <circle cx="12" cy="12" r="7"/>
+            <path d="M5 9c3 0 3-3 7-3s4 3 7 3"/>
+            <path d="M12 19c1-2 4-3 6-3"/>
           </svg>
         </div>
-        <div class="label">Ip ishlab chiqarish</div>
+        <div class="label" data-key="yon_yarn">Ip ishlab chiqarish</div>
       </div>
 
-      <div class="p-item" role="listitem">
-        <div class="icon" aria-hidden="true">
-          <!-- knitting/knit machine icon outline -->
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0b63b8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="6" width="18" height="12" rx="2"></rect>
-            <path d="M7 12h10"></path>
-            <path d="M7 9v6"></path>
-            <path d="M17 9v6"></path>
+      <div class="p-item">
+        <div class="icon">
+          <svg width="28" height="28" fill="none" stroke="#0b63b8" stroke-width="1.6">
+            <rect x="3" y="6" width="18" height="12" rx="2"/>
+            <path d="M7 12h10"/>
+            <path d="M7 9v6"/>
+            <path d="M17 9v6"/>
           </svg>
         </div>
-        <div class="label">Trikotaj mato tayyorlash</div>
+        <div class="label" data-key="yon_knit">Trikotaj mato tayyorlash</div>
       </div>
 
-      <div class="p-item" role="listitem">
-        <div class="icon" aria-hidden="true">
-          <!-- dyeing / droplet outline -->
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0b63b8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2s5 5.5 5 9a5 5 0 0 1-10 0c0-3.5 5-9 5-9z"></path>
-            <circle cx="12" cy="16" r="1"></circle>
+      <div class="p-item">
+        <div class="icon">
+          <svg width="28" height="28" fill="none" stroke="#0b63b8" stroke-width="1.6">
+            <path d="M12 2s5 5.5 5 9a5 5 0 0 1-10 0c0-3.5 5-9 5-9z"/>
+            <circle cx="12" cy="16" r="1"/>
           </svg>
         </div>
-        <div class="label">Matoni bo‘yash</div>
+        <div class="label" data-key="yon_dye">Matoni bo‘yash</div>
       </div>
 
-      <div class="p-item" role="listitem">
-        <div class="icon" aria-hidden="true">
-          <!-- sewing / scissors outline -->
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0b63b8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="6" cy="7" r="2"></circle>
-            <circle cx="6" cy="17" r="2"></circle>
-            <path d="M20 4L8.5 15.5"></path>
-            <path d="M14.5 9.5L20 16"></path>
+      <div class="p-item">
+        <div class="icon">
+          <svg width="28" height="28" fill="none" stroke="#0b63b8" stroke-width="1.6">
+            <circle cx="6" cy="7" r="2"/>
+            <circle cx="6" cy="17" r="2"/>
+            <path d="M20 4L8.5 15.5"/>
+            <path d="M14.5 9.5L20 16"/>
           </svg>
         </div>
-        <div class="label">Tayyor kiyim tikish</div>
+        <div class="label" data-key="yon_sew">Tayyor kiyim tikish</div>
       </div>
 
     </div>
 
+    <!-- === QUWWAT CARDLAR (Tarjima ulangan) === -->
     <h3 class="capacity-title" data-key="quvvat_title">Ishlab chiqarish quvvati</h3>
 
-    <div class="capacity-grid" aria-hidden="false">
+    <div class="capacity-grid">
 
       <div class="cap-card">
-        <h4>Paxta qayta ishlash</h4>
-        <p>1200 tonna / oy</p>
+        <h4 data-key="cap_cotton">Paxta qayta ishlash</h4>
+        <p data-key="cap_cotton_val">1200 tonna / oy</p>
       </div>
 
       <div class="cap-card">
-        <h4>Ip ishlab chiqarish</h4>
-        <p>550 tonna / oy</p>
+        <h4 data-key="cap_yarn">Ip ishlab chiqarish</h4>
+        <p data-key="cap_yarn_val">550 tonna / oy</p>
       </div>
 
       <div class="cap-card">
-        <h4>Trikotaj mato</h4>
-        <p>250 tonna / oy</p>
+        <h4 data-key="cap_knit">Trikotaj mato</h4>
+        <p data-key="cap_knit_val">250 tonna / oy</p>
       </div>
 
       <div class="cap-card">
-        <h4>Tikuvchilik</h4>
-        <p>150 000 — 200 000 dona / oy</p>
+        <h4 data-key="cap_sew">Tikuvchilik</h4>
+        <p data-key="cap_sew_val">150 000 — 200 000 dona / oy</p>
       </div>
 
     </div>
 
   </section>
 
-  <!-- === ISHLAB CHIQARISH BO‘LIMLARI === -->
+  <!-- === ISHLAB CHIQARISH BO'LIMLARI === -->
   <section id="mahsulot">
     <h2 data-key="bolim_title">Ishlab chiqarish bo‘limlari</h2>
 
     <div class="product-grid">
 
       <div class="product-card" onclick="location.href='ip.html'">
-        <img src="ip-main.jpg" alt="ip">
+        <img src="ip-main.jpg">
         <h3 data-key="card_ip">Ip yigiruv bo‘limi</h3>
       </div>
 
       <div class="product-card" onclick="location.href='trikotaj.html'">
-        <img src="trikotaj-main.jpg" alt="trikotaj">
+        <img src="trikotaj-main.jpg">
         <h3 data-key="card_tr">Trikotaj bo‘limi</h3>
       </div>
 
       <div class="product-card" onclick="location.href='baski.html'">
-        <img src="baski-main.jfif" alt="baski">
+        <img src="baski-main.jfif">
         <h3 data-key="card_baski">Baski bo‘limi</h3>
       </div>
 
       <div class="product-card" onclick="location.href='tikuv.html'">
-        <img src="tikuv-main.jpg" alt="tikuv">
+        <img src="tikuv-main.jpg">
         <h3 data-key="card_tikuv">Tikuvchilik bo‘limi</h3>
       </div>
 
@@ -390,41 +381,34 @@
     <p data-key="manzil"><strong>Manzil:</strong> Xiva tumani, Shomoxulim mahallasi</p>
     <p data-key="tel"><strong>Telefon:</strong> +998 91 993 15 15</p>
 
-   <p data-key="email_title"><strong>Email:</strong></p>
+    <p data-key="email_title"><strong>Email:</strong></p>
 
-<p style="margin-top:-8px;">
-  <a href="mailto:sales@khivatex.uz"
-     style="text-decoration:none; color:#0b63b8; font-weight:700; font-size:18px;">
-     📧 sales@khivatex.uz
-  </a>
-</p>
+    <p>
+      <a href="mailto:sales@khivatex.uz" style="color:#0b63b8;font-weight:700;font-size:18px;">
+        📧 sales@khivatex.uz
+      </a>
+    </p>
 
-<p>
-  <a href="mailto:sabirov@khivatex.uz"
-     style="text-decoration:none; color:#0b63b8; font-weight:700; font-size:18px;">
-     📧 sabirov@khivatex.uz
-  </a>
-</p>
+    <p>
+      <a href="mailto:sabirov@khivatex.uz" style="color:#0b63b8;font-weight:700;font-size:18px;">
+        📧 sabirov@khivatex.uz
+      </a>
+    </p>
 
     <div class="map-box">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6024.068284339073!2d60.4324116!3d41.4314988!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41dfbb0019ec66e3%3A0xc9b0f28612ce5822!2sKHIVA%20TEKS!5e0!3m2!1sru!2s!4v1700000000000"
-        loading="lazy" allowfullscreen>
-      </iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6024..." loading="lazy"></iframe>
     </div>
 
     <div class="social-box">
-      <a class="social" href="https://t.me/khiva_teks" target="_blank" aria-label="Telegram">
+      <a class="social" href="https://t.me/khiva_teks">
         <i class="fa-brands fa-telegram"></i>
       </a>
-
-      <a class="social" href="https://www.instagram.com/khiva_teks" target="_blank" aria-label="Instagram">
+      <a class="social" href="https://www.instagram.com/khiva_teks">
         <i class="fa-brands fa-instagram"></i>
       </a>
     </div>
 
   </section>
-
   <!-- === LANGUAGE SCRIPT === -->
   <script>
     const translations = {
@@ -437,7 +421,23 @@
         biz_p1: "<strong>Khiva Textile</strong> — 2022 yilda tashkil etilgan, zamonaviy texnologiyalar va xalqaro standartlar asosida ishlab chiqaruvchi korxona.",
         biz_p2: "Har bir bosqichda sifat nazorati, ekologik me’yorlarga rioya qilish va ishlab chiqarish samaradorligini oshirishga alohida e’tibor beramiz.",
 
+        yon_title: "Ishlab chiqarish yo‘nalishlari",
+        yon_cotton: "Paxta qayta ishlash",
+        yon_yarn: "Ip ishlab chiqarish",
+        yon_knit: "Trikotaj mato tayyorlash",
+        yon_dye: "Matoni bo‘yash",
+        yon_sew: "Tayyor kiyim tikish",
+
         quvvat_title: "Ishlab chiqarish quvvati",
+
+        cap_cotton: "Paxta qayta ishlash",
+        cap_cotton_val: "1200 tonna / oy",
+        cap_yarn: "Ip ishlab chiqarish",
+        cap_yarn_val: "550 tonna / oy",
+        cap_knit: "Trikotaj mato",
+        cap_knit_val: "250 tonna / oy",
+        cap_sew: "Tikuvchilik",
+        cap_sew_val: "150 000 — 200 000 dona / oy",
 
         bolim_title: "Ishlab chiqarish bo‘limlari",
         card_ip: "Ip yigiruv bo‘limi",
@@ -446,8 +446,8 @@
         card_tikuv: "Tikuvchilik bo‘limi",
 
         aloqa_title: "Aloqa",
-        manzil: "<strong>Manzil:</strong> O'zbekiston, Xiva",
-        tel: "<strong>Telefon:</strong> +998 94 113 44 41",
+        manzil: "<strong>Manzil:</strong> Xiva tumani, Shomoxulim mahallasi",
+        tel: "<strong>Telefon:</strong> +998 91 993 15 15",
         email_title: "<strong>Email:</strong>"
       },
 
@@ -460,7 +460,23 @@
         biz_p1: "<strong>Khiva Textile</strong> — основана в 2022 году, предприятие с современными технологиями и соответствующее международным стандартам.",
         biz_p2: "На каждом этапе мы уделяем особое внимание контролю качества, экологическим нормам и эффективности производства.",
 
+        yon_title: "Производственные направления",
+        yon_cotton: "Переработка хлопка",
+        yon_yarn: "Производство пряжи",
+        yon_knit: "Производство трикотажного полотна",
+        yon_dye: "Крашение тканей",
+        yon_sew: "Пошив готовой продукции",
+
         quvvat_title: "Производственные мощности",
+
+        cap_cotton: "Переработка хлопка",
+        cap_cotton_val: "1200 тонн / месяц",
+        cap_yarn: "Производство пряжи",
+        cap_yarn_val: "550 тонн / месяц",
+        cap_knit: "Трикотажное полотно",
+        cap_knit_val: "250 тонн / месяц",
+        cap_sew: "Швейный цех",
+        cap_sew_val: "150 000 — 200 000 шт / месяц",
 
         bolim_title: "Производственные отделы",
         card_ip: "Прядильный отдел",
@@ -469,8 +485,8 @@
         card_tikuv: "Швейный отдел",
 
         aloqa_title: "Контакты",
-        manzil: "<strong>Адрес:</strong> Узбекистан, Хива",
-        tel: "<strong>Телефон:</strong> +998 94 113 44 41",
+        manzil: "<strong>Адрес:</strong> Хивинский район, махалля Шомохулим",
+        tel: "<strong>Телефон:</strong> +998 91 993 15 15",
         email_title: "<strong>Email:</strong>"
       },
 
@@ -480,10 +496,26 @@
         nav_aloqa: "Contact",
 
         biz_title: "About Us",
-        biz_p1: "<strong>Khiva Textile</strong> — established in 2022, a modern company operating with up-to-date technologies and following international standards.",
-        biz_p2: "At every stage we pay special attention to quality control, environmental compliance and production efficiency.",
+        biz_p1: "<strong>Khiva Textile</strong> — established in 2022, a modern company operating with advanced technologies and international standards.",
+        biz_p2: "We pay special attention to quality control, environmental compliance and productivity at every stage.",
+
+        yon_title: "Production Directions",
+        yon_cotton: "Cotton Processing",
+        yon_yarn: "Yarn Production",
+        yon_knit: "Knitted Fabric Production",
+        yon_dye: "Fabric Dyeing",
+        yon_sew: "Garment Sewing",
 
         quvvat_title: "Production Capacity",
+
+        cap_cotton: "Cotton Processing",
+        cap_cotton_val: "1200 tons / month",
+        cap_yarn: "Yarn Production",
+        cap_yarn_val: "550 tons / month",
+        cap_knit: "Knitted Fabric",
+        cap_knit_val: "250 tons / month",
+        cap_sew: "Sewing",
+        cap_sew_val: "150 000 — 200 000 pcs / month",
 
         bolim_title: "Production Departments",
         card_ip: "Yarn Spinning",
@@ -492,8 +524,8 @@
         card_tikuv: "Sewing Department",
 
         aloqa_title: "Contact",
-        manzil: "<strong>Address:</strong> Uzbekistan, Khiva",
-        tel: "<strong>Phone:</strong> +998 94 113 44 41",
+        manzil: "<strong>Address:</strong> Khiva district, Shomokhulim area",
+        tel: "<strong>Phone:</strong> +998 91 993 15 15",
         email_title: "<strong>Email:</strong>"
       }
     };
@@ -502,23 +534,19 @@
       localStorage.setItem("lang", lang);
       document.querySelectorAll("[data-key]").forEach(el => {
         const key = el.getAttribute("data-key");
-        if (!key) return;
-        const text = translations[lang] && translations[lang][key];
-        if (text !== undefined) {
-          el.innerHTML = text;
-        }
+        const text = translations[lang]?.[key];
+        if (text !== undefined) el.innerHTML = text;
       });
       document.documentElement.lang = lang;
     }
 
     window.onload = () => {
       const saved = localStorage.getItem("lang") || "uz";
-      const select = document.querySelector("#lang-switcher select");
-      if (select) select.value = saved;
+      document.querySelector("#lang-switcher select").value = saved;
       setLang(saved);
     };
   </script>
 
 </body>
-
 </html>
+
