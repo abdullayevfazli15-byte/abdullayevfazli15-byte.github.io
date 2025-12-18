@@ -428,134 +428,158 @@
 
   </section>
   <!-- === LANGUAGE SCRIPT === -->
-  <script>
-    const translations = {
-      uz: {
-        nav_biz: "Biz haqimizda",
-        nav_bolim: "Bo‘limlar",
-        nav_aloqa: "Aloqa",
+<script>
+  const translations = {
+    uz: {
+      nav_biz: "Biz haqimizda",
+      nav_bolim: "Bo‘limlar",
+      nav_aloqa: "Aloqa",
 
-        biz_title: "Biz haqimizda",
-       biz_p1: "<strong>Khiva Teks</strong> – 2022 yilda tashkil etilgan, SABALIHOLDİNG tarkibidagi fabrika bo'lib, zamonaviy texnologiyalar va xalqaro standartlar asosida yuqori sifatli mahsulotlar ishlab chiqaradi. Kompaniya o'zining innovatsion yondashuvlari bilan sanoatda etakchi o'rin egallaydi.",
+      biz_title: "Biz haqimizda",
+      biz_p1: "<strong>Khiva Teks</strong> – 2022 yilda tashkil etilgan, SABALIHOLDİNG tarkibidagi fabrika bo'lib, zamonaviy texnologiyalar va xalqaro standartlar asosida yuqori sifatli mahsulotlar ishlab chiqaradi. Kompaniya o'zining innovatsion yondashuvlari bilan sanoatda etakchi o'rin egallaydi.",
+      biz_p2: "Har bir jarayonda sifat nazorati, ekologik me'yorlarga rioya qilish hamda ishlab chiqarish samaradorligini oshirishga alohida e'tibor qaratamiz. Bizning asosiy maqsadimiz – mijozlarimizga eng yuqori sifatli mahsulotlarni yetkazib berish va bozor talablariga javob berishdir.",
 
-biz_p2: "Har bir jarayonda sifat nazorati, ekologik me'yorlarga rioya qilish hamda ishlab chiqarish samaradorligini oshirishga alohida e'tibor qaratamiz. Bizning asosiy maqsadimiz – mijozlarimizga eng yuqori sifatli mahsulotlarni yetkazib berish va bozor talablariga javob berishdir.",
+      /* === ISHLAB CHIQARISH YO‘NALISHLARI === */
+      yon_title: "Ishlab chiqarish yo‘nalishlari",
+      yon_cotton: "Paxta qayta ishlash",
+      yon_yarn: "Ip ishlab chiqarish",
+      yon_knit: "Trikotaj mato tayyorlash",
+      yon_dye: "Matoni bo‘yash",
+      yon_sew: "Tayyor kiyim tikish",
 
-        yon_title: "Ishlab chiqarish yo‘nalishlari",
-        yon_cotton: "Paxta qayta ishlash",
-        yon_yarn: "Ip ishlab chiqarish",
-        yon_knit: "Trikotaj mato tayyorlash",
-        yon_dye: "Matoni bo‘yash",
-        yon_sew: "Tayyor kiyim tikish",
+      /* === YILLIK ISHLAB CHIQARISH QUVVATI === */
+      quvvat_title: "Yillik ishlab chiqarish quvvati",
+      quvvat_note: "Ko‘rsatkichlar 12 oylik ishlab chiqarish hajmiga asoslangan",
 
-        quvvat_title: "Yillik ishlab chiqarish quvvati",
-quvvat_note: "Ko‘rsatkichlar 12 oylik ishlab chiqarish hajmiga asoslangan",
-cap_cotton_val: "14 400 tonna / yil",
-cap_yarn_val: "6 600 tonna / yil",
-cap_knit_val: "3 000 tonna / yil",
-cap_sew_val: "1 800 000 — 2 400 000 dona / yil",
+      cap_cotton: "Paxta qayta ishlash",
+      cap_yarn: "Ip ishlab chiqarish",
+      cap_knit: "Trikotaj mato",
+      cap_sew: "Tikuvchilik",
 
-        bolim_title: "Ishlab chiqarish bo‘limlari",
-        card_ip: "Ip yigiruv bo‘limi",
-        card_tr: "Trikotaj bo‘limi",
-        card_baski: "Baski bo‘limi",
-        card_tikuv: "Tikuvchilik bo‘limi",
+      cap_cotton_val: "14 400 tonna / yil",
+      cap_yarn_val: "6 600 tonna / yil",
+      cap_knit_val: "3 000 tonna / yil",
+      cap_sew_val: "1 800 000 — 2 400 000 dona / yil",
 
-        aloqa_title: "Aloqa",
-        manzil: "<strong>Manzil:</strong> Xiva tumani, Shomoxulim mahallasi",
-        tel: "<strong>Telefon:</strong> +998 94 113 44 41",
-        email_title: "<strong>Email:</strong>"
-      },
+      /* === BO‘LIMLAR === */
+      bolim_title: "Ishlab chiqarish bo‘limlari",
+      card_ip: "Ip yigiruv bo‘limi",
+      card_tr: "Trikotaj bo‘limi",
+      card_baski: "Baski bo‘limi",
+      card_tikuv: "Tikuvchilik bo‘limi",
 
-      ru: {
-        nav_biz: "О нас",
-        nav_bolim: "Отделы",
-        nav_aloqa: "Контакты",
+      /* === ALOQA === */
+      aloqa_title: "Aloqa",
+      manzil: "<strong>Manzil:</strong> Xiva tumani, Shomoxulim mahallasi",
+      tel: "<strong>Telefon:</strong> +998 94 113 44 41",
+      email_title: "<strong>Email:</strong>"
+    },
 
-        biz_title: "О нас",
-       biz_p1: "<strong>Khiva Teks</strong> – основана в 2022 году и входит в состав SABALIHOLDING. Фабрика производит высококачественную продукцию на основе современных технологий и международных стандартов. Компания занимает лидирующие позиции в отрасли благодаря своему инновационному подходу.",
+    ru: {
+      nav_biz: "О нас",
+      nav_bolim: "Отделы",
+      nav_aloqa: "Контакты",
 
-biz_p2: "На каждом этапе мы уделяем особое внимание контролю качества, соблюдению экологических норм и повышению эффективности производства. Наша основная цель — предоставлять клиентам продукцию высочайшего качества и соответствовать требованиям рынка.",
+      biz_title: "О нас",
+      biz_p1: "<strong>Khiva Teks</strong> – основана в 2022 году и входит в состав SABALIHOLDING. Фабрика производит высококачественную продукцию на основе современных технологий и международных стандартов. Компания занимает лидирующие позиции в отрасли благодаря своему инновационному подходу.",
+      biz_p2: "На каждом этапе мы уделяем особое внимание контролю качества, соблюдению экологических норм и повышению эффективности производства. Наша основная цель — предоставлять клиентам продукцию высочайшего качества и соответствовать требованиям рынка.",
 
-        yon_title: "Производственные направления",
-        yon_cotton: "Переработка хлопка",
-        yon_yarn: "Производство пряжи",
-        yon_knit: "Производство трикотажного полотна",
-        yon_dye: "Крашение тканей",
-        yon_sew: "Пошив готовой продукции",
+      /* === ПРОИЗВОДСТВЕННЫЕ НАПРАВЛЕНИЯ === */
+      yon_title: "Производственные направления",
+      yon_cotton: "Переработка хлопка",
+      yon_yarn: "Производство пряжи",
+      yon_knit: "Производство трикотажного полотна",
+      yon_dye: "Крашение тканей",
+      yon_sew: "Пошив готовой продукции",
 
-       quvvat_title: "Годовая производственная мощность",
-quvvat_note: "Показатели основаны на 12-месячном объёме производства",
-cap_cotton_val: "14 400 тонн / год",
-cap_yarn_val: "6 600 тонн / год",
-cap_knit_val: "3 000 тонн / год",
-cap_sew_val: "1 800 000 — 2 400 000 шт / год",
+      /* === ГОДОВАЯ МОЩНОСТЬ === */
+      quvvat_title: "Годовая производственная мощность",
+      quvvat_note: "Показатели основаны на 12-месячном объёме производства",
 
-        bolim_title: "Производственные отделы",
-        card_ip: "Прядильный отдел",
-        card_tr: "Отдел трикотажа",
-        card_baski: "Печать тканей",
-        card_tikuv: "Швейный отдел",
+      cap_cotton: "Переработка хлопка",
+      cap_yarn: "Производство пряжи",
+      cap_knit: "Производство трикотажного полотна",
+      cap_sew: "Пошив готовой продукции",
 
-        aloqa_title: "Контакты",
-        manzil: "<strong>Адрес:</strong> Хивинский район, махалля Шомохулим",
-        tel: "<strong>Телефон:</strong> +998 94 113 44 41",
-        email_title: "<strong>Email:</strong>"
-      },
+      cap_cotton_val: "14 400 тонн / год",
+      cap_yarn_val: "6 600 тонн / год",
+      cap_knit_val: "3 000 тонн / год",
+      cap_sew_val: "1 800 000 — 2 400 000 шт / год",
 
-      en: {
-        nav_biz: "About Us",
-        nav_bolim: "Departments",
-        nav_aloqa: "Contact",
+      /* === ОТДЕЛЫ === */
+      bolim_title: "Производственные отделы",
+      card_ip: "Прядильный отдел",
+      card_tr: "Отдел трикотажа",
+      card_baski: "Печать тканей",
+      card_tikuv: "Швейный отдел",
 
-        biz_title: "About Us",
-    biz_p1: "<strong>Khiva Teks</strong> – established in 2022 and operating under SABALIHOLDING, is a modern factory that produces high-quality products using advanced technologies and international standards. With its innovative approach, the company holds a leading position in the industry.",
+      /* === КОНТАКТЫ === */
+      aloqa_title: "Контакты",
+      manzil: "<strong>Адрес:</strong> Хивинский район, махалля Шомохулим",
+      tel: "<strong>Телефон:</strong> +998 94 113 44 41",
+      email_title: "<strong>Email:</strong>"
+    },
 
-biz_p2: "At every stage, we pay special attention to quality control, compliance with environmental standards, and improving production efficiency. Our main goal is to deliver the highest-quality products to our customers and meet market demands.",
+    en: {
+      nav_biz: "About Us",
+      nav_bolim: "Departments",
+      nav_aloqa: "Contact",
 
-        yon_title: "Production Directions",
-        yon_cotton: "Cotton Processing",
-        yon_yarn: "Yarn Production",
-        yon_knit: "Knitted Fabric Production",
-        yon_dye: "Fabric Dyeing",
-        yon_sew: "Garment Sewing",
+      biz_title: "About Us",
+      biz_p1: "<strong>Khiva Teks</strong> – established in 2022 and operating under SABALIHOLDING, is a modern factory that produces high-quality products using advanced technologies and international standards. With its innovative approach, the company holds a leading position in the industry.",
+      biz_p2: "At every stage, we pay special attention to quality control, compliance with environmental standards, and improving production efficiency. Our main goal is to deliver the highest-quality products to our customers and meet market demands.",
 
-       quvvat_title: "Annual production capacity",
-quvvat_note: "Figures are based on 12 months of production volume",
-cap_cotton_val: "14,400 tons / year",
-cap_yarn_val: "6,600 tons / year",
-cap_knit_val: "3,000 tons / year",
-cap_sew_val: "1,800,000 – 2,400,000 pcs / year",
+      /* === PRODUCTION DIRECTIONS === */
+      yon_title: "Production Directions",
+      yon_cotton: "Cotton Processing",
+      yon_yarn: "Yarn Production",
+      yon_knit: "Knitted Fabric Production",
+      yon_dye: "Fabric Dyeing",
+      yon_sew: "Garment Sewing",
 
-        bolim_title: "Production Departments",
-        card_ip: "Yarn Spinning",
-        card_tr: "Knitting",
-        card_baski: "Fabric Printing",
-        card_tikuv: "Sewing Department",
+      /* === ANNUAL CAPACITY === */
+      quvvat_title: "Annual production capacity",
+      quvvat_note: "Figures are based on 12 months of production volume",
 
-        aloqa_title: "Contact",
-        manzil: "<strong>Address:</strong> Khiva district, Shomokhulim area",
-        tel: "<strong>Phone:</strong> +998 94 113 44 41",
-        email_title: "<strong>Email:</strong>"
-      }
-    };
+      cap_cotton: "Cotton processing",
+      cap_yarn: "Yarn production",
+      cap_knit: "Knitted fabric",
+      cap_sew: "Garment manufacturing",
 
-    function setLang(lang) {
-      localStorage.setItem("lang", lang);
-      document.querySelectorAll("[data-key]").forEach(el => {
-        const key = el.getAttribute("data-key");
-        const text = translations[lang]?.[key];
-        if (text !== undefined) el.innerHTML = text;
-      });
-      document.documentElement.lang = lang;
+      cap_cotton_val: "14,400 tons / year",
+      cap_yarn_val: "6,600 tons / year",
+      cap_knit_val: "3,000 tons / year",
+      cap_sew_val: "1,800,000 – 2,400,000 pcs / year",
+
+      /* === DEPARTMENTS === */
+      bolim_title: "Production Departments",
+      card_ip: "Yarn Spinning",
+      card_tr: "Knitting",
+      card_baski: "Fabric Printing",
+      card_tikuv: "Sewing Department",
+
+      /* === CONTACT === */
+      aloqa_title: "Contact",
+      manzil: "<strong>Address:</strong> Khiva district, Shomokhulim area",
+      tel: "<strong>Phone:</strong> +998 94 113 44 41",
+      email_title: "<strong>Email:</strong>"
     }
+  };
 
-    window.onload = () => {
-      const saved = localStorage.getItem("lang") || "uz";
-      document.querySelector("#lang-switcher select").value = saved;
-      setLang(saved);
-    };
-  </script>
+  function setLang(lang) {
+    localStorage.setItem("lang", lang);
+    document.querySelectorAll("[data-key]").forEach(el => {
+      const key = el.getAttribute("data-key");
+      const text = translations[lang]?.[key];
+      if (text !== undefined) el.innerHTML = text;
+    });
+    document.documentElement.lang = lang;
+  }
 
-</body>
-</html>
+  window.onload = () => {
+    const saved = localStorage.getItem("lang") || "uz";
+    document.querySelector("#lang-switcher select").value = saved;
+    setLang(saved);
+  };
+</script>
 
