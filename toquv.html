@@ -3,37 +3,158 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>To‘quv bo‘limi | Khiva Teks</title>
-<meta name="description" content="Khiva Teks to‘quv bo‘limida zamonaviy dastgohlar yordamida yuqori sifatli matolar ishlab chiqariladi.">
 
-<link rel="stylesheet" href="style.css">
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f4f8;
+    color: #222;
+  }
+
+  /* ===== HEADER ===== */
+  .top-header {
+    background: linear-gradient(135deg, #0b63b8, #3f8fe0);
+    padding: 40px 20px 70px;
+    position: relative;
+    text-align: center;
+    color: #fff;
+  }
+
+  .back-btn {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    background: #ffffffcc;
+    color: #0b63b8;
+    padding: 8px 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  .top-header h1 {
+    font-size: 34px;
+    margin: 0;
+    font-weight: 900;
+  }
+
+  /* ===== CONTENT CARD ===== */
+  .content-box {
+    max-width: 1100px;
+    margin: -40px auto 60px;
+    background: #fff;
+    border-radius: 22px;
+    padding: 35px;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+  }
+
+  .content-box h2 {
+    font-size: 26px;
+    color: #003366;
+    margin-bottom: 12px;
+  }
+
+  .content-box p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 14px;
+  }
+
+  .features {
+    margin: 20px 0;
+    padding-left: 18px;
+  }
+
+  .features li {
+    margin-bottom: 8px;
+    font-size: 16px;
+  }
+
+  /* ===== GALLERY ===== */
+  .gallery-title {
+    font-size: 22px;
+    font-weight: 800;
+    margin: 30px 0 15px;
+    color: #003366;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+  }
+
+  .gallery img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+
+  .gallery img:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 26px rgba(0,0,0,0.18);
+  }
+
+  /* ===== MOBILE ===== */
+  @media(max-width:700px) {
+    .top-header h1 { font-size: 24px; }
+    .content-box { padding: 22px; }
+    .gallery img { height: 180px; }
+  }
+</style>
 </head>
 
 <body>
 
-<section class="inner-page">
-  <h1>To‘quv bo‘limi</h1>
+<!-- ===== HEADER ===== -->
+<div class="top-header">
+  <a href="index.html#mahsulot" class="back-btn">⬅ Orqaga</a>
+  <h1>To‘quv bo‘limi — Zamonaviy to‘quv texnologiyalari</h1>
+</div>
 
-  <img src="toquv-main.jpg" alt="To‘quv bo‘limi" class="inner-img">
+<!-- ===== CONTENT ===== -->
+<div class="content-box">
+
+  <h2>To‘quv bo‘limi haqida</h2>
 
   <p>
     To‘quv bo‘limi Khiva Teks ishlab chiqarish tizimining muhim bosqichlaridan biridir.
-    Ushbu bo‘limda zamonaviy to‘quv dastgohlari yordamida turli zichlik va tuzilishga ega
-    matolar ishlab chiqariladi.
+    Ushbu bo‘limda ipdan tayyor to‘qima hosil qilish jarayoni zamonaviy
+    sanoat to‘quv stanoklari yordamida amalga oshiriladi.
   </p>
 
   <p>
-    Jarayon ip tayyorlashdan boshlab, matoni shakllantirishgacha bo‘lgan barcha
-    bosqichlarni o‘z ichiga oladi. Har bir ishlab chiqarish bosqichida sifat
-    nazorati qat’iy amalga oshiriladi.
+    Ishlab chiqarish jarayonida matoning zichligi, mustahkamligi va tuzilmasi
+    doimiy nazorat qilinadi. Bu esa keyingi bo‘limlarda yuqori sifatli
+    mahsulot tayyorlash imkonini beradi.
   </p>
 
-  <p>
-    To‘quv bo‘limida ishlab chiqarilgan mahsulotlar trikotaj, bo‘yash va
-    tikuvchilik bo‘limlariga uzatiladi.
-  </p>
-</section>
+  <h2>Asosiy imkoniyatlar</h2>
+  <ul class="features">
+    <li>Yuqori tezlikdagi sanoat to‘quv stanoklari</li>
+    <li>Turli zichlik va tuzilishga ega to‘qimalar</li>
+    <li>Barqaror va uzluksiz ishlab chiqarish</li>
+    <li>Katta hajmli buyurtmalarni bajarish imkoniyati</li>
+    <li>Keyingi texnologik jarayonlar bilan to‘liq integratsiya</li>
+  </ul>
 
-</body>
-</html>
+  <div class="gallery-title">To‘quv jarayoni</div>
+
+  <div class="gallery">
+    <img src="toquv1.jpg" alt="To‘quv jarayoni">
+    <img src="toquv2.jpg" alt="To‘quv stanogi">
+    <img src="toquv3.jpg" alt="To‘qima ishlab chiqarish">
+    <img src="toquv4.jpg" alt="Sanoat to‘quv sexi">
+    <img src="toquv5.jpg" alt="To‘quv jarayoni">
+    <img src="toquv6.jpeg" alt="To‘quv stanogi">
+    <img src="toquv7.jpg" alt="To‘qima ishlab chiqarish">
+    <img src="toquv8.jpg" alt="Sanoat to‘quv sexi">
+  </div>
+
+</div>
