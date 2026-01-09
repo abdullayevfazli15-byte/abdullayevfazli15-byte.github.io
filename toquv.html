@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>To‘quv bo‘limi | Khiva Teks</title>
+<title data-key="toquv_page_title">To‘quv bo‘limi | Khiva Teks</title>
 
 <style>
   body {
@@ -13,7 +13,6 @@
     color: #222;
   }
 
-  /* ===== HEADER ===== */
   .top-header {
     background: linear-gradient(135deg, #0b63b8, #3f8fe0);
     padding: 40px 20px 70px;
@@ -40,7 +39,6 @@
     font-weight: 900;
   }
 
-  /* ===== CONTENT CARD ===== */
   .content-box {
     max-width: 1100px;
     margin: -40px auto 60px;
@@ -73,7 +71,6 @@
     font-size: 16px;
   }
 
-  /* ===== GALLERY ===== */
   .gallery-title {
     font-size: 22px;
     font-weight: 800;
@@ -101,7 +98,6 @@
     box-shadow: 0 10px 26px rgba(0,0,0,0.18);
   }
 
-  /* ===== MOBILE ===== */
   @media(max-width:700px) {
     .top-header h1 { font-size: 24px; }
     .content-box { padding: 22px; }
@@ -112,49 +108,112 @@
 
 <body>
 
-<!-- ===== HEADER ===== -->
 <div class="top-header">
-  <a href="index.html#mahsulot" class="back-btn">⬅ Orqaga</a>
-  <h1>To‘quv bo‘limi — Zamonaviy to‘quv texnologiyalari</h1>
+  <a href="index.html#mahsulot" class="back-btn" data-key="back_btn">⬅ Orqaga</a>
+  <h1 data-key="toquv_title">To‘quv bo‘limi — Zamonaviy to‘quv texnologiyalari</h1>
 </div>
 
-<!-- ===== CONTENT ===== -->
 <div class="content-box">
 
-  <h2>To‘quv bo‘limi haqida</h2>
+  <h2 data-key="toquv_about_title">To‘quv bo‘limi haqida</h2>
 
-  <p>
+  <p data-key="toquv_p1">
     To‘quv bo‘limi Khiva Teks ishlab chiqarish tizimining muhim bosqichlaridan biridir.
-    Ushbu bo‘limda ipdan tayyor to‘qima hosil qilish jarayoni zamonaviy
-    sanoat to‘quv stanoklari yordamida amalga oshiriladi.
   </p>
 
-  <p>
-    Ishlab chiqarish jarayonida matoning zichligi, mustahkamligi va tuzilmasi
-    doimiy nazorat qilinadi. Bu esa keyingi bo‘limlarda yuqori sifatli
-    mahsulot tayyorlash imkonini beradi.
+  <p data-key="toquv_p2">
+    Ishlab chiqarish jarayonida matoning sifati doimiy nazorat qilinadi.
   </p>
 
-  <h2>Asosiy imkoniyatlar</h2>
+  <h2 data-key="toquv_feat_title">Asosiy imkoniyatlar</h2>
   <ul class="features">
-    <li>Yuqori tezlikdagi sanoat to‘quv stanoklari</li>
-    <li>Turli zichlik va tuzilishga ega to‘qimalar</li>
-    <li>Barqaror va uzluksiz ishlab chiqarish</li>
-    <li>Katta hajmli buyurtmalarni bajarish imkoniyati</li>
-    <li>Keyingi texnologik jarayonlar bilan to‘liq integratsiya</li>
+    <li data-key="toquv_f1">Yuqori tezlikdagi sanoat to‘quv stanoklari</li>
+    <li data-key="toquv_f2">Turli zichlik va tuzilishga ega to‘qimalar</li>
+    <li data-key="toquv_f3">Barqaror va uzluksiz ishlab chiqarish</li>
+    <li data-key="toquv_f4">Katta hajmli buyurtmalarni bajarish</li>
+    <li data-key="toquv_f5">Texnologik jarayonlar bilan integratsiya</li>
   </ul>
 
-  <div class="gallery-title">To‘quv jarayoni</div>
+  <div class="gallery-title" data-key="toquv_gallery">To‘quv jarayoni</div>
 
   <div class="gallery">
-    <img src="toquv1.jpg" alt="To‘quv jarayoni">
-    <img src="toquv2.jpg" alt="To‘quv stanogi">
-    <img src="toquv3.jpg" alt="To‘qima ishlab chiqarish">
-    <img src="toquv4.jpg" alt="Sanoat to‘quv sexi">
-    <img src="toquv5.jpg" alt="To‘quv jarayoni">
-    <img src="toquv6.jpeg" alt="To‘quv stanogi">
-    <img src="toquv7.jpg" alt="To‘qima ishlab chiqarish">
-    <img src="toquv8.jpg" alt="Sanoat to‘quv sexi">
+    <img src="toquv1.jpg">
+    <img src="toquv2.jpg">
+    <img src="toquv3.jpg">
+    <img src="toquv4.jpg">
+    <img src="toquv5.jpg">
+    <img src="toquv6.jpeg">
+    <img src="toquv7.jpg">
+    <img src="toquv8.jpg">
   </div>
 
 </div>
+
+<!-- === TRANSLATION SCRIPT === -->
+<script>
+const translations = {
+  uz: {
+    toquv_page_title: "To‘quv bo‘limi | Khiva Teks",
+    back_btn: "⬅ Orqaga",
+    toquv_title: "To‘quv bo‘limi — Zamonaviy to‘quv texnologiyalari",
+    toquv_about_title: "To‘quv bo‘limi haqida",
+    toquv_p1: "To‘quv bo‘limi Khiva Teks ishlab chiqarish tizimining muhim bosqichlaridan biridir.",
+    toquv_p2: "Ishlab chiqarish jarayonida matoning sifati doimiy nazorat qilinadi.",
+    toquv_feat_title: "Asosiy imkoniyatlar",
+    toquv_f1: "Yuqori tezlikdagi sanoat to‘quv stanoklari",
+    toquv_f2: "Turli zichlik va tuzilishga ega to‘qimalar",
+    toquv_f3: "Barqaror va uzluksiz ishlab chiqarish",
+    toquv_f4: "Katta hajmli buyurtmalarni bajarish",
+    toquv_f5: "Texnologik jarayonlar bilan integratsiya",
+    toquv_gallery: "To‘quv jarayoni"
+  },
+
+  ru: {
+    toquv_page_title: "Ткацкий цех | Khiva Teks",
+    back_btn: "⬅ Назад",
+    toquv_title: "Ткацкий цех — Современные технологии",
+    toquv_about_title: "О ткацком цехе",
+    toquv_p1: "Ткацкий цех является важным этапом производственной системы Khiva Teks.",
+    toquv_p2: "Качество ткани постоянно контролируется в процессе производства.",
+    toquv_feat_title: "Основные возможности",
+    toquv_f1: "Высокоскоростные ткацкие станки",
+    toquv_f2: "Различные виды плотности тканей",
+    toquv_f3: "Стабильное производство",
+    toquv_f4: "Выполнение крупных заказов",
+    toquv_f5: "Интеграция с другими процессами",
+    toquv_gallery: "Процесс ткачества"
+  },
+
+  en: {
+    toquv_page_title: "Weaving Department | Khiva Teks",
+    back_btn: "⬅ Back",
+    toquv_title: "Weaving Department — Modern Technologies",
+    toquv_about_title: "About the weaving department",
+    toquv_p1: "The weaving department is an important stage of Khiva Teks production system.",
+    toquv_p2: "Fabric quality is continuously monitored during production.",
+    toquv_feat_title: "Main features",
+    toquv_f1: "High-speed industrial looms",
+    toquv_f2: "Different fabric densities",
+    toquv_f3: "Stable production process",
+    toquv_f4: "Large order capability",
+    toquv_f5: "Full process integration",
+    toquv_gallery: "Weaving process"
+  }
+};
+
+function applyLang(){
+  const lang = localStorage.getItem("lang") || "uz";
+  document.querySelectorAll("[data-key]").forEach(el=>{
+    const key = el.getAttribute("data-key");
+    if(translations[lang][key]){
+      el.innerHTML = translations[lang][key];
+    }
+  });
+  document.documentElement.lang = lang;
+}
+
+applyLang();
+</script>
+
+</body>
+</html>
