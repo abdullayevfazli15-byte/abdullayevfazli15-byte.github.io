@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sochiq ishlab chiqarish | Khiva Teks</title>
+<title data-key="towel_page_title">Sochiq ishlab chiqarish | Khiva Teks</title>
 
 <style>
   body {
@@ -13,7 +13,6 @@
     color: #222;
   }
 
-  /* HEADER */
   .top-header {
     background: linear-gradient(135deg, #0b63b8, #3f8fe0);
     padding: 40px 20px 70px;
@@ -40,7 +39,6 @@
     font-weight: 900;
   }
 
-  /* CONTENT CARD */
   .content-box {
     max-width: 1100px;
     margin: -40px auto 60px;
@@ -73,7 +71,6 @@
     font-size: 16px;
   }
 
-  /* GALLERY */
   .gallery-title {
     font-size: 22px;
     font-weight: 800;
@@ -94,7 +91,6 @@
     border-radius: 14px;
   }
 
-  /* MOBILE */
   @media(max-width:700px) {
     .top-header h1 { font-size: 24px; }
     .content-box { padding: 22px; }
@@ -105,51 +101,112 @@
 
 <body>
 
-<!-- HEADER -->
 <div class="top-header">
-  <a href="index.html#mahsulot" class="back-btn">⬅ Orqaga</a>
-  <h1>Sochiq ishlab chiqarish — Terry To‘quv Stanoklari</h1>
+  <a href="index.html#mahsulot" class="back-btn" data-key="back_btn">⬅ Orqaga</a>
+  <h1 data-key="towel_title">Sochiq ishlab chiqarish — Terry To‘quv Stanoklari</h1>
 </div>
 
-<!-- CONTENT -->
 <div class="content-box">
 
-  <h2>Terry (halqali) sochiq ishlab chiqarish texnologiyasi</h2>
+  <h2 data-key="towel_about_title">Terry (halqali) sochiq ishlab chiqarish texnologiyasi</h2>
 
-  <p>
-    Sochiq ishlab chiqarish bo‘limi zamonaviy <b>terry (halqali) to‘quv stanoklari</b>
-    bilan jihozlangan. Ushbu texnologiya sochiqlarga xos bo‘lgan yumshoq,
-    zich va yuqori suv shimish qobiliyatiga ega halqali tuzilmani hosil qiladi.
+  <p data-key="towel_p1">
+    Sochiq ishlab chiqarish bo‘limi zamonaviy terry (halqali) to‘quv stanoklari bilan jihozlangan.
   </p>
 
-  <p>
-    Terry stanoklarda ikki xil asos ipi (ground va pile warp) ishlatiladi,
-    bu esa mahsulotning mustahkamligi va uzoq muddat xizmat qilishini ta’minlaydi.
+  <p data-key="towel_p2">
+    Ushbu texnologiya mahsulotning mustahkamligi va uzoq muddat xizmat qilishini ta’minlaydi.
   </p>
 
-  <h2>Asosiy imkoniyatlar</h2>
+  <h2 data-key="towel_feat_title">Asosiy imkoniyatlar</h2>
   <ul class="features">
-    <li>Halqali (pile) sochiq to‘qish texnologiyasi</li>
-    <li>Yuqori suv shimish va yumshoqlik</li>
-    <li>Mehmonxona va eksport sifati</li>
-    <li>Turli rang, o‘lcham va zichlik variantlari</li>
-    <li>Katta hajmli buyurtmalar uchun mos</li>
+    <li data-key="towel_f1">Halqali sochiq to‘qish texnologiyasi</li>
+    <li data-key="towel_f2">Yuqori suv shimish va yumshoqlik</li>
+    <li data-key="towel_f3">Mehmonxona va eksport sifati</li>
+    <li data-key="towel_f4">Turli rang va o‘lcham variantlari</li>
+    <li data-key="towel_f5">Katta hajmli buyurtmalar uchun mos</li>
   </ul>
 
-  <div class="gallery-title">Sochiq ishlab chiqarish jarayoni</div>
+  <div class="gallery-title" data-key="towel_gallery">Sochiq ishlab chiqarish jarayoni</div>
 
   <div class="gallery">
-    <img src="sochiq1.jpg" alt="Sochiq ishlab chiqarish">
-    <img src="sochiq2.webp" alt="Sochiq ishlab chiqarish">
-    <img src="sochiq3.jpg" alt="Sochiq ishlab chiqarish">
-    <img src="sochiq4.jpg" alt="Sochiq ishlab chiqarish">
-    <img src="sochiq5.jpg" alt="Sochiq ishlab chiqarish">
-    <img src="sochiq6.jpg" alt="Sochiq ishlab chiqarish">
-    <img src="sochiq7.webp" alt="Sochiq ishlab chiqarish">
-    <img src="sochiq8.jpg" alt="Sochiq ishlab chiqarish">
+    <img src="sochiq1.jpg">
+    <img src="sochiq2.webp">
+    <img src="sochiq3.jpg">
+    <img src="sochiq4.jpg">
+    <img src="sochiq5.jpg">
+    <img src="sochiq6.jpg">
+    <img src="sochiq7.webp">
+    <img src="sochiq8.jpg">
   </div>
 
 </div>
+
+<!-- === TRANSLATION SCRIPT === -->
+<script>
+const translations = {
+  uz: {
+    towel_page_title: "Sochiq ishlab chiqarish | Khiva Teks",
+    back_btn: "⬅ Orqaga",
+    towel_title: "Sochiq ishlab chiqarish — Terry To‘quv Stanoklari",
+    towel_about_title: "Terry (halqali) sochiq ishlab chiqarish texnologiyasi",
+    towel_p1: "Sochiq ishlab chiqarish bo‘limi zamonaviy terry (halqali) to‘quv stanoklari bilan jihozlangan.",
+    towel_p2: "Ushbu texnologiya mahsulotning mustahkamligi va uzoq muddat xizmat qilishini ta’minlaydi.",
+    towel_feat_title: "Asosiy imkoniyatlar",
+    towel_f1: "Halqali sochiq to‘qish texnologiyasi",
+    towel_f2: "Yuqori suv shimish va yumshoqlik",
+    towel_f3: "Mehmonxona va eksport sifati",
+    towel_f4: "Turli rang va o‘lcham variantlari",
+    towel_f5: "Katta hajmli buyurtmalar uchun mos",
+    towel_gallery: "Sochiq ishlab chiqarish jarayoni"
+  },
+
+  ru: {
+    towel_page_title: "Производство полотенец | Khiva Teks",
+    back_btn: "⬅ Назад",
+    towel_title: "Производство полотенец — Терри станки",
+    towel_about_title: "Технология производства махровых полотенец",
+    towel_p1: "Отдел производства полотенец оснащён современными махровыми станками.",
+    towel_p2: "Данная технология обеспечивает прочность и долговечность изделий.",
+    towel_feat_title: "Основные возможности",
+    towel_f1: "Махровая технология ткачества",
+    towel_f2: "Высокая впитываемость и мягкость",
+    towel_f3: "Гостиничное и экспортное качество",
+    towel_f4: "Различные цвета и размеры",
+    towel_f5: "Подходит для крупных заказов",
+    towel_gallery: "Процесс производства полотенец"
+  },
+
+  en: {
+    towel_page_title: "Towel Production | Khiva Teks",
+    back_btn: "⬅ Back",
+    towel_title: "Towel Production — Terry Loom Technology",
+    towel_about_title: "Terry towel production technology",
+    towel_p1: "The towel production department is equipped with modern terry looms.",
+    towel_p2: "This technology ensures durability and long service life of the products.",
+    towel_feat_title: "Main features",
+    towel_f1: "Terry weaving technology",
+    towel_f2: "High absorbency and softness",
+    towel_f3: "Hotel and export quality",
+    towel_f4: "Various colors and sizes",
+    towel_f5: "Suitable for large orders",
+    towel_gallery: "Towel production process"
+  }
+};
+
+function applyLang(){
+  const lang = localStorage.getItem("lang") || "uz";
+  document.querySelectorAll("[data-key]").forEach(el=>{
+    const key = el.getAttribute("data-key");
+    if(translations[lang][key]){
+      el.innerHTML = translations[lang][key];
+    }
+  });
+  document.documentElement.lang = lang;
+}
+
+applyLang();
+</script>
 
 </body>
 </html>
